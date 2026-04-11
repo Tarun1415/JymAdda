@@ -1,0 +1,259 @@
+/* =========================================
+   PARTNER BENEFITS SECTION - MODERN CSS
+========================================= */
+
+.partner-benefits-section {
+    padding: 20px 0 80px 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Abstract Shapes */
+.partner-benefits-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.partner-benefits-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.pb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Header */
+.pb-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.pb-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(79, 70, 229, 0.1);
+    color: #4f46e5;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.pb-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.pb-title span {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pb-subtitle {
+    font-size: 18px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Features Grid */
+.pb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.pb-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pb-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.pb-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.08);
+    border-color: rgba(79, 70, 229, 0.1);
+}
+
+.pb-card:hover::before {
+    opacity: 1;
+}
+
+.pb-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    background: rgba(79, 70, 229, 0.1);
+    color: #4f46e5;
+    transition: all 0.3s ease;
+}
+
+.pb-card:hover .pb-icon-wrapper {
+    background: #4f46e5;
+    color: #ffffff;
+    transform: scale(1.05) rotate(-5deg);
+}
+
+.pb-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+}
+
+.pb-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.pb-card-text {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Call to Action Bar */
+.pb-cta-box {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 24px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.2);
+}
+
+.pb-cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: rotate(30deg);
+}
+
+.pb-cta-box h3 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.pb-cta-box p {
+    color: #94a3b8;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.pb-cta-btn {
+    display: inline-block;
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+    transition: all 0.3s ease;
+}
+
+.pb-cta-btn:hover {
+    background: #6366f1;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(79, 70, 229, 0.5);
+    color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .partner-benefits-section {
+        padding: 10px 0 60px 0;
+    }
+
+    .pb-title {
+        font-size: 28px;
+    }
+
+    .pb-subtitle {
+        font-size: 16px;
+    }
+
+    .pb-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pb-card {
+        padding: 30px 24px;
+    }
+
+    .pb-cta-box {
+        padding: 40px 20px;
+    }
+
+    .pb-cta-box h3 {
+        font-size: 24px;
+    }
+
+    .pb-cta-box p {
+        font-size: 15px;
+    }
+
+    .pb-cta-btn {
+        width: 100%;
+        padding: 16px 20px;
+    }
+}
