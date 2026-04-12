@@ -101,7 +101,9 @@ class HomeController extends Controller
         OpenGraph::addProperty('type', 'website');
         OpenGraph::setSiteName('GymAdda');
 
-        $gyms = Gym::query()
+        $sort = trim((string) $request->get('sort', 'newest'));
+
+        $gymsQuery = Gym::query()
             ->where('status', 'active')
             ->when($q !== '', function ($query) use ($q) {
                 $query->where(function ($qq) use ($q) {
@@ -112,9 +114,15 @@ class HomeController extends Controller
                 });
             })
             ->when($city !== '', fn ($query) => $query->where('city', 'like', "%{$city}%"))
-            ->when($pincode !== '', fn ($query) => $query->where('pincode', 'like', "%{$pincode}%"))
-            ->latest()
-            ->paginate(12)
+            ->when($pincode !== '', fn ($query) => $query->where('pincode', 'like', "%{$pincode}%"));
+
+        if ($sort === 'top_rated') {
+            $gymsQuery->orderByDesc('rating')->orderByDesc('total_reviews');
+        } else {
+            $gymsQuery->latest();
+        }
+
+        $gyms = $gymsQuery->paginate(12)
             ->appends($request->query());
 
         return view('frontend.pages.gyms-index', compact('gyms', 'q', 'city', 'pincode'));

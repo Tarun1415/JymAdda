@@ -21,18 +21,65 @@
     z-index: 2;
 }
 
-/* ===== Desktop Search Bar ===== */
-.form-search {
+/* ===== Desktop Search Widget ===== */
+.search-widget {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 16px;
     max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 8px;
-    border-radius: 60px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    margin: 30px auto 0 auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.search-tabs {
+    border-bottom: none;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.search-tabs::-webkit-scrollbar { display: none; }
+
+.search-tabs .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 14px;
     display: flex;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.search-tabs .nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-tabs .nav-link.active {
+    color: #0f172a;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-search {
+    width: 100%;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 6px;
+    border-radius: 60px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .mobile-input-wrap {
@@ -203,47 +250,101 @@
         margin-top: 0 !important;
     }
 
-    /* Unify the search input and button into one premium capsule */
+    .search-widget {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    .search-tabs {
+        margin-bottom: 15px;
+        padding-bottom: 5px; /* space for active shadow */
+    }
+
+    .search-tabs .nav-link {
+        padding: 8px 14px;
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .search-tabs .nav-link.active {
+        background: #fff;
+        color: #f43f5e; /* Highlight color for mobile */
+    }
+
+    /* Vertical Booking-Style Card for Mobile */
+    .hero-search-wrapper {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 28px;
+        padding: 24px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        margin: 20px 0 10px 0;
+    }
+
     .form-search {
-        flex-direction: row;
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        padding: 6px;
-        backdrop-filter: blur(8px);
-        border-radius: 100px; /* Fully rounded capsule */
-        gap: 0;
+        flex-direction: column !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        backdrop-filter: none !important;
+        gap: 14px !important;
     }
 
     .mobile-input-wrap {
         display: flex;
         align-items: center;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-        flex: 1;
-        min-width: 0;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 6px 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        width: 100%;
+        transition: border-color 0.3s;
+        border: 2px solid transparent;
+    }
+
+    .mobile-input-wrap:focus-within {
+        border-color: #ef4444; /* pop color on focus */
     }
 
     .mobile-input-wrap .form-control {
-        height: 50px;
-        font-size: 14px;
-        padding-left: 8px;
+        height: 54px;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        padding-left: 16px !important;
+        color: #0f172a;
+    }
+
+    .mobile-input-wrap .form-control::placeholder {
+        color: #94a3b8;
+        font-weight: 500;
     }
 
     .mobile-input-wrap .search-icon-wrapper {
-        padding-left: 12px;
+        padding-left: 0;
+        color: #ef4444; /* vibrant icon color */
     }
 
-    .form-search .btn-primary {
-        width: auto;
+    .form-search .btn-hero-submit {
+        width: 100% !important;
+        height: 56px !important;
+        border-radius: 16px !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.5px;
         margin-left: 0 !important;
-        border-radius: 100px !important;
-        height: 50px;
-        padding: 0 20px;
-        font-size: 15px;
-        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+        border: none !important;
+        box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4) !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
     }
 
     .suggest-box {
@@ -271,7 +372,10 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow-x: auto;
+        padding-top: 8px; /* Room for upward hover transform */
         padding-bottom: 15px; /* Room for shadow/scroll */
+        padding-left: 2px;
+        padding-right: 2px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
         mask-image: linear-gradient(to right, black 85%, transparent 100%);
@@ -285,5 +389,9 @@
         font-size: 13px;
         background: rgba(255, 255, 255, 0.15);
         flex: 0 0 auto;
+    }
+    .explore-pill:active {
+        transform: translateY(-1px) scale(0.98);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 }

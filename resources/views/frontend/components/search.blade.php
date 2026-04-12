@@ -13,30 +13,38 @@
           Discover Your Perfect Gym & Start Your Fitness Journey
         </h1>
 
-        <form action="{{ route('gyms.index') }}"
-              class="form-search position-relative"
-              autocomplete="off"
-              style="z-index: 9999 !important;">
+        <div class="hero-search-wrapper" data-aos="fade-up" data-aos-delay="100" style="position: relative; z-index: 9000;">
+          <form action="{{ route('gyms.index') }}"
+                class="form-search position-relative"
+                autocomplete="off"
+                style="z-index: 9999 !important;">
 
-          <div class="mobile-input-wrap">
-            <div class="search-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
+            <div class="mobile-input-wrap">
+              <div class="search-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <input type="text"
+                     class="form-control"
+                     id="gymSearchInput"
+                     name="q"
+                     placeholder="Search for city, location or gym...">
             </div>
-            <input type="text"
-                   class="form-control"
-                   id="gymSearchInput"
-                   name="q"
-                   placeholder="Search for city, location or gym...">
-          </div>
 
-          <button type="submit" class="btn btn-primary d-none d-md-block">Search</button>
-          <button type="submit" class="btn btn-primary d-block d-md-none">Search</button>
+            <!-- Desktop Search Button -->
+            <button type="submit" class="btn btn-primary d-none d-md-block">Search</button>
 
-          <div id="suggestBox" class="suggest-box d-none" style="z-index: 9999 !important; position: absolute; width: 100%; text-align: left; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border-radius: 12px; margin-top: 5px;"></div>
-        </form>
+            <!-- Vertical Mobile Submit Button -->
+            <button type="submit" class="btn btn-primary d-flex d-md-none btn-hero-submit">
+              Search Gyms Now
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ms-2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <div id="suggestBox" class="suggest-box d-none" style="z-index: 9999 !important; position: absolute; width: 100%; text-align: left; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border-radius: 12px; margin-top: 5px;"></div>
+          </form>
+        </div>
 
         {{-- ✅ Explore (Pill Tags) --}}
         <div class="hero-explore" style="position: relative; z-index: 1;">

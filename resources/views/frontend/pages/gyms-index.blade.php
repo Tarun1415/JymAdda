@@ -60,13 +60,23 @@
     <!-- Filters / Breadcrumbs area -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="dt-chip-tags d-none d-md-flex gap-2">
-            <span class="dt-chip active">All Gyms</span>
+            <a href="{{ route('gyms.index') }}" class="dt-chip active text-decoration-none">All Gyms</a>
+            @if(request('city'))
+                <a href="{{ route('gyms.index', ['city' => request('city')]) }}" class="dt-chip text-decoration-none">{{ request('city') }}</a>
+            @endif
         </div>
         <div class="dt-sort">
-            <select class="form-select dt-select">
-                <option>Top Rated</option>
-                <option>Newest Added</option>
-            </select>
+            <form action="{{ route('gyms.index') }}" method="GET" id="sortForm">
+                @if(request('q')) <input type="hidden" name="q" value="{{ request('q') }}"> @endif
+                @if(request('city')) <input type="hidden" name="city" value="{{ request('city') }}"> @endif
+                @if(request('pincode')) <input type="hidden" name="pincode" value="{{ request('pincode') }}"> @endif
+
+                <select name="sort" class="form-select dt-select" onchange="document.getElementById('sortForm').submit();">
+                    <option value="">Sort By</option>
+                    <option value="top_rated" {{ request('sort') == 'top_rated' ? 'selected' : '' }}>Top Rated</option>
+                    <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Newest Added</option>
+                </select>
+            </form>
         </div>
     </div>
 
@@ -375,43 +385,40 @@
 
   /* ===== MOBILE VIEW ENHANCEMENTS ===== */
   @media (max-width: 768px) {
-    .search-page-section {
-      padding-top: 90px;
-      padding-bottom: 40px;
-      background-color: #f1f5f9;
-    }
-    
-    .search-header {
-      flex-direction: column;
-      align-items: stretch;
-      background: #fff;
-      padding: 16px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      margin-bottom: 20px;
-      gap: 12px;
-    }
+      .directory-toolbar {
+          padding-top: 100px;
+          padding-bottom: 30px;
+          border-radius: 0 0 24px 24px;
+      }
 
-    .search-title {
-      font-size: 20px;
-    }
+      .dt-header {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 16px !important;
+      }
 
-    .search-form-wrap {
-      flex: 1;
-    }
+      .dt-title {
+          font-size: 24px;
+      }
 
-    .search-form {
-      flex-direction: column;
-      gap: 10px;
-    }
-    
-    .search-input-group {
-      width: 100%;
-    }
-    
-    .btn-search-submit {
-      width: 100%;
-    }
+      .dt-search-area {
+          width: 100%;
+      }
+
+      .dt-search-form {
+          flex-direction: column;
+          gap: 12px;
+          padding: 12px;
+          border-radius: 20px;
+      }
+
+      .dt-input-wrap {
+          width: 100%;
+      }
+
+      .dt-search-btn {
+          width: 100%;
+      }
 
     /* Horizontal Cards for Mobile */
     .gym-card {

@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class PartnerProfileController extends Controller
 {
+    private function getPathPrefix($path = '') {
+        $isLocal = in_array(request()->getHost(), ['localhost', '127.0.0.1', '::1']) || str_ends_with(request()->getHost(), '.test');
+        return $isLocal ? public_path($path) : base_path($path);
+    }
+
     public function Partnerprofile(Request $request, $token)
     {
         // ✅ login check
@@ -73,7 +78,7 @@ class PartnerProfileController extends Controller
 
             $safeName = Str::slug($partner->name ?: 'partner');
             $folder   = "partner/profile/{$safeName}";
-            $path     = public_path($folder);
+            $path     = $this->getPathPrefix($folder);
 
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
@@ -101,7 +106,7 @@ class PartnerProfileController extends Controller
 
             $safeName = Str::slug($partner->name ?: 'partner');
             $folder   = "partner/document/{$safeName}";
-            $path     = public_path($folder);
+            $path     = $this->getPathPrefix($folder);
 
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);

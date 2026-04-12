@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\File;
 
 class PartnerGymGalleryController extends Controller
 {
+    private function getPathPrefix($path = '') {
+        $isLocal = in_array(request()->getHost(), ['localhost', '127.0.0.1', '::1']) || str_ends_with(request()->getHost(), '.test');
+        return $isLocal ? public_path($path) : base_path($path);
+    }
+
     /**
      * View the gallery management page.
      * Partner can select their gym.
@@ -85,7 +90,7 @@ class PartnerGymGalleryController extends Controller
 
         // Save each image
         if ($request->hasFile('images')) {
-            $path = public_path('uploads/gym_gallery/' . date('Y_m_d'));
+            $path = $this->getPathPrefix('uploads/gym_gallery/' . date('Y_m_d'));
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
             }
@@ -121,8 +126,8 @@ class PartnerGymGalleryController extends Controller
                              ->where('partner_id', $partnerId)
                              ->firstOrFail();
 
-        if (File::exists(public_path($gallery->image_path))) {
-            File::delete(public_path($gallery->image_path));
+        if (File::exists($this->getPathPrefix($gallery->image_path))) {
+            File::delete($this->getPathPrefix($gallery->image_path));
         }
 
         $gallery->delete();

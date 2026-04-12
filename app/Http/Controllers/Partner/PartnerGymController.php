@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\File;
 
 class PartnerGymController extends Controller
 {
+    private function getPathPrefix($path = '') {
+        $isLocal = in_array(request()->getHost(), ['localhost', '127.0.0.1', '::1']) || str_ends_with(request()->getHost(), '.test');
+        return $isLocal ? public_path($path) : base_path($path);
+    }
 public function index()
 {
     $partnerId = session('partner_id');
@@ -102,7 +106,7 @@ public function StoreJymData(Request $request)
         $image = $request->file('gym_image');
 
         $imageName = $slug . '-' . time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('uploads/gyms');
+        $path = $this->getPathPrefix('uploads/gyms');
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
@@ -119,7 +123,7 @@ public function StoreJymData(Request $request)
         $image = $request->file('seo_image');
 
         $imageName = $slug . '-seo-' . time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('uploads/seo');
+        $path = $this->getPathPrefix('uploads/seo');
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
@@ -214,10 +218,10 @@ public function updateJymData(Request $request, $uuid)
         'closing_time'      => 'nullable',
         'open_days'         => 'nullable|string|max:100',
 
-        'gym_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'gym_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|',
         'seo_title'        => 'nullable|string|max:255',
         'seo_description'  => 'nullable|string|max:1000',
-        'seo_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'seo_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|',
     ]);
 
     /* ============ IMAGE UPDATE (Gym Image) ============ */
@@ -225,15 +229,15 @@ public function updateJymData(Request $request, $uuid)
     if ($request->hasFile('gym_image')) {
 
         // old delete
-        if (!empty($gym->gym_image) && File::exists(public_path($gym->gym_image))) {
-            File::delete(public_path($gym->gym_image));
+        if (!empty($gym->gym_image) && File::exists($this->getPathPrefix($gym->gym_image))) {
+            File::delete($this->getPathPrefix($gym->gym_image));
         }
 
         $slug = Str::slug($request->gym_name);
         $image = $request->file('gym_image');
 
         $imageName = $slug . '-' . time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('uploads/gyms');
+        $path = $this->getPathPrefix('uploads/gyms');
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
@@ -248,15 +252,15 @@ public function updateJymData(Request $request, $uuid)
     if ($request->hasFile('seo_image')) {
 
         // old delete
-        if (!empty($gym->seo_image) && File::exists(public_path($gym->seo_image))) {
-            File::delete(public_path($gym->seo_image));
+        if (!empty($gym->seo_image) && File::exists($this->getPathPrefix($gym->seo_image))) {
+            File::delete($this->getPathPrefix($gym->seo_image));
         }
 
         $slug = Str::slug($request->gym_name);
         $image = $request->file('seo_image');
 
         $imageName = $slug . '-seo-' . time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('uploads/seo');
+        $path = $this->getPathPrefix('uploads/seo');
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);

@@ -63,19 +63,31 @@
         <div class="container">
             <div class="row justify-content-between">
 
-                {{-- LEFT: MAIN IMAGE + CONTACT/INFO + RATING --}}
-                <div class="col-lg-7">
+                {{-- MAIN CONTENT --}}
+                <div class="col-lg-8 order-1">
 
-                    {{-- Main Image Preview --}}
-                    <div class="img-property-slide-wrap mb-3">
+                    {{-- 1. Main Image Preview --}}
+                    <div class="img-property-slide-wrap mb-4 d-none d-lg-block">
                         <div class="img-property-slide">
                             <img id="mainPreview" src="{{ $mainImg }}" alt="{{ $jymListDetails->gym_name }}"
                                 class="img-fluid w-100 gym-main-img">
                         </div>
                     </div>
 
-                    {{-- CONTACT US --}}
-                    <div class="ui-card ui-card-soft mt-4">
+                    {{-- 2. Gym Name + Description --}}
+                    <div class="nav-details mt-2 mb-4">
+                        <h2 class="heading text-primary" style="font-weight:800; font-size: clamp(24px, 5vw, 32px);">{{ $jymListDetails->gym_name }}</h2>
+                        <p class="meta text-muted mb-3" style="font-size: 14px;">
+                            <i class="ti ti-map-pin"></i> {{ $jymListDetails->city ?? '-' }}, {{ $jymListDetails->state ?? '-' }}
+                        </p>
+                        
+                        <div class="text-black-50 ui-description-box" style="line-height: 1.8; font-size: 15px;">
+                            {!! $jymListDetails->description !!}
+                        </div>
+                    </div>
+
+                    {{-- 2. CONTACT US (Mobile Only) --}}
+                    <div class="ui-card d-block d-lg-none mb-4">
                         <div class="d-flex align-items-start justify-content-between gap-3">
                             <div>
                                 <div class="ui-title">Contact Us</div>
@@ -87,7 +99,7 @@
                         <hr class="ui-hr">
 
                         <div class="d-flex align-items-center gap-3">
-                            <div class="ui-avatar">
+                            <div class="ui-avatar" style="width:48px; height:48px;">
                                 <span>👤</span>
                             </div>
                             <div>
@@ -97,23 +109,29 @@
                         </div>
 
                         <div class="row mt-3 g-2">
-                            <div class="col-md-6">
-                                <div class="ui-chip">
-                                    <div class="ui-chip-label">Mobile</div>
-                                    <div class="ui-chip-value">{{ $jymListDetails->mobile ?? '-' }}</div>
+                            <div class="col-12">
+                                <div class="ui-chip d-flex align-items-center gap-2">
+                                    <i class="ti ti-phone text-primary" style="font-size:18px;"></i>
+                                    <div>
+                                        <div class="ui-chip-label">Mobile</div>
+                                        <div class="ui-chip-value">{{ $jymListDetails->mobile ?? '-' }}</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="ui-chip">
-                                    <div class="ui-chip-label">Email</div>
-                                    <div class="ui-chip-value">{{ $jymListDetails->email ?? '-' }}</div>
+                            <div class="col-12">
+                                <div class="ui-chip d-flex align-items-center gap-2">
+                                    <i class="ti ti-mail text-primary" style="font-size:18px;"></i>
+                                    <div>
+                                        <div class="ui-chip-label">Email</div>
+                                        <div class="ui-chip-value" style="word-break: break-all;">{{ $jymListDetails->email ?? '-' }}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {{-- GYM INFORMATION --}}
-                    <div class="ui-card mt-3">
+                    {{-- 3. GYM INFORMATION --}}
+                    <div class="ui-card mb-4">
                         <div>
                             <div class="ui-title">Gym Information</div>
                             <div class="ui-subtitle">Location, timings & facilities</div>
@@ -121,7 +139,7 @@
 
                         <hr class="ui-hr">
 
-                        <div class="ui-info-block">
+                        <div class="ui-info-block mb-2">
                             <div class="ui-chip-label">Address</div>
                             <div class="ui-chip-value ui-wrap">{{ $jymListDetails->address ?? '-' }}</div>
                         </div>
@@ -143,16 +161,97 @@
 
                         <div class="ui-info-block mt-2">
                             <div class="ui-chip-label">Facilities</div>
-                            <div class="ui-chip-value">
-                                Trainer: {{ $jymListDetails->trainer_available ? 'Yes' : 'No' }},
-                                Parking: {{ $jymListDetails->parking_available ? 'Yes' : 'No' }},
-                                AC: {{ $jymListDetails->ac_available ? 'Yes' : 'No' }}
+                            <div class="ui-chip-value d-flex gap-2 flex-wrap mt-1">
+                                <span class="ui-badge {{ $jymListDetails->trainer_available ? 'ui-badge-success' : 'ui-badge-secondary' }}">Trainer {{ $jymListDetails->trainer_available ? '✓' : '✗' }}</span>
+                                <span class="ui-badge {{ $jymListDetails->parking_available ? 'ui-badge-success' : 'ui-badge-secondary' }}">Parking {{ $jymListDetails->parking_available ? '✓' : '✗' }}</span>
+                                <span class="ui-badge {{ $jymListDetails->ac_available ? 'ui-badge-success' : 'ui-badge-secondary' }}">AC {{ $jymListDetails->ac_available ? '✓' : '✗' }}</span>
                             </div>
                         </div>
                     </div>
 
-                    {{-- RATING & REVIEWS --}}
-                    <div class="ui-card ui-card-gradient mt-3">
+
+
+                    {{-- 5. GYM GALLERY --}}
+                    <div class="mb-5">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <h5 class="mb-0 ui-title-sm">Gym Gallery</h5>
+                            <span class="ui-badge ui-badge-primary">
+                                <i class="ti ti-photo me-1"></i> 
+                                @if($jymListDetails->galleries) 
+                                    {{ $jymListDetails->galleries->count() }} 
+                                @else 
+                                    0 
+                                @endif Photos
+                            </span>
+                        </div>
+                        <p class="ui-subtitle mb-3">Click any picture below to view in full size.</p>
+
+                        @if(empty($jymListDetails->galleries) || $jymListDetails->galleries->count() === 0)
+                            <div class="ui-card ui-card-soft text-center py-4">
+                                <i class="ti ti-photo text-muted mb-2" style="font-size: 2.5rem;"></i>
+                                <p class="ui-muted mb-0">No gallery images uploaded yet.</p>
+                            </div>
+                        @else
+                            <div class="row g-2">
+                                @foreach($jymListDetails->galleries as $gallery)
+                                <div class="col-4 col-sm-4 col-md-3 col-lg-3">
+                                    <div class="position-relative overflow-hidden" style="border-radius:12px;">
+                                        <img src="{{ asset($gallery->image_path) }}" 
+                                            class="img-fluid gym-thumb w-100" 
+                                            onclick="openLightbox('{{ asset($gallery->image_path) }}')" 
+                                            alt="Gym gallery preview">
+                                        <div class="thumb-overlay" onclick="openLightbox('{{ asset($gallery->image_path) }}')">
+                                            <i class="ti ti-zoom-in"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+
+                    {{-- 6. QUICK ENQUIRY (Mobile Only) --}}
+                    <div class="ui-card ui-card-soft d-block d-lg-none mb-5">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div>
+                                <div class="ui-title">Quick Enquiry</div>
+                                <div class="ui-subtitle">Send your query, we’ll contact you soon</div>
+                            </div>
+                            <span class="ui-badge ui-badge-primary">Fast</span>
+                        </div>
+
+                        <hr class="ui-hr">
+
+                        <form action="{{ route('Enquiry.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="gym_id" value="{{ $jymListDetails->id }}">
+                            
+                            <div class="mb-2">
+                                <label class="form-label ui-label">Your Name <span class="text-danger">*</span></label>
+                                <input type="text" name="name" class="form-control ui-input" placeholder="Enter your name" required maxlength="255">
+                                @error('name')<small class="text-danger">{{ $message }}</small>@enderror
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label ui-label">Mobile Number <span class="text-danger">*</span></label>
+                                <input type="text" name="mobile" class="form-control ui-input" placeholder="10-digit mobile number" required pattern="[0-9]{10}" title="Must be a 10 digit number">
+                                @error('mobile')<small class="text-danger">{{ $message }}</small>@enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label ui-label">Message</label>
+                                <textarea name="message" class="form-control ui-textarea" rows="3" placeholder="I want to know about membership..."></textarea>
+                                @error('message')<small class="text-danger">{{ $message }}</small>@enderror
+                            </div>
+
+                            <button type="submit" class="btn ui-btn w-100">
+                                Send Enquiry <i class="ti ti-send ms-1"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    {{-- 7. RATING & REVIEWS --}}
+                    <div class="ui-card ui-card-gradient mb-4">
                         <div class="d-flex align-items-start justify-content-between">
                             <div>
                                 <div class="ui-title">Rating & Reviews</div>
@@ -205,7 +304,7 @@
 
                     {{-- LATEST REVIEWS --}}
                     @if(isset($jymListDetails->reviews) && $jymListDetails->reviews->count() > 0)
-                    <div class="mt-4">
+                    <div class="mb-5">
                         <h5 class="ui-title-sm mb-3">Latest Reviews</h5>
                         <div class="d-flex flex-column gap-3">
                             @foreach($jymListDetails->reviews as $review)
@@ -235,97 +334,95 @@
 
                 </div>
 
-                {{-- RIGHT: DETAILS + DESCRIPTION + GALLERY + QUICK ENQUIRY --}}
-                <div class="col-lg-4">
-                    <h2 class="heading text-primary">{{ $jymListDetails->gym_name }}</h2>
-                    <p class="meta">
-                        {{ $jymListDetails->city ?? '-' }}, {{ $jymListDetails->state ?? '-' }}
-                    </p>
-
-                    {{-- Description (Summernote HTML) --}}
-                    <div class="text-black-50">
-                        {!! $jymListDetails->description !!}
-                    </div>
-
-                    {{-- ================= GYM GALLERY ================= --}}
-                    <div class="mt-4">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <h5 class="mb-0 ui-title-sm">Gym Gallery</h5>
-                            <span class="ui-badge ui-badge-primary">
-                                <i class="ti ti-photo me-1"></i> 
-                                @if($jymListDetails->galleries) 
-                                    {{ $jymListDetails->galleries->count() }} 
-                                @else 
-                                    0 
-                                @endif Photos
-                            </span>
-                        </div>
-                        <p class="ui-subtitle mb-3">Click any picture below to view in full size.</p>
-
-                        @if(empty($jymListDetails->galleries) || $jymListDetails->galleries->count() === 0)
-                            <div class="ui-card ui-card-soft text-center py-4">
-                                <i class="ti ti-photo text-muted mb-2" style="font-size: 2.5rem;"></i>
-                                <p class="ui-muted mb-0">No gallery images uploaded yet.</p>
+                {{-- SIDEBAR: QUICK ENQUIRY + CONTACT (Desktop Only) --}}
+                <div class="col-lg-4 order-2 d-none d-lg-block">
+                    <div style="position: sticky; top: 20px; z-index: 99;">
+                        
+                        {{-- ================= QUICK ENQUIRY ================= --}}
+                        <div class="ui-card ui-card-soft mb-4">
+                            <div class="d-flex align-items-start justify-content-between">
+                                <div>
+                                    <div class="ui-title">Quick Enquiry</div>
+                                    <div class="ui-subtitle">Send your query, we’ll contact you soon</div>
+                                </div>
+                                <span class="ui-badge ui-badge-primary">Fast</span>
                             </div>
-                        @else
-                            <div class="row g-2">
-                                @foreach($jymListDetails->galleries as $gallery)
-                                <div class="col-4 col-sm-4 col-md-3 col-lg-4">
-                                    <div class="position-relative overflow-hidden" style="border-radius:12px;">
-                                        <img src="{{ asset($gallery->image_path) }}" 
-                                            class="img-fluid gym-thumb w-100" 
-                                            onclick="openLightbox('{{ asset($gallery->image_path) }}')" 
-                                            alt="Gym gallery preview">
-                                        <div class="thumb-overlay" onclick="openLightbox('{{ asset($gallery->image_path) }}')">
-                                            <i class="ti ti-zoom-in"></i>
+
+                            <hr class="ui-hr">
+
+                            <form action="{{ route('Enquiry.store') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="gym_id" value="{{ $jymListDetails->id }}">
+                                
+                                <div class="mb-2">
+                                    <label class="form-label ui-label">Your Name <span class="text-danger">*</span></label>
+                                    <input type="text" name="name" class="form-control ui-input" placeholder="Enter your name" required maxlength="255">
+                                    @error('name')<small class="text-danger">{{ $message }}</small>@enderror
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label ui-label">Mobile Number <span class="text-danger">*</span></label>
+                                    <input type="text" name="mobile" class="form-control ui-input" placeholder="10-digit mobile number" required pattern="[0-9]{10}" title="Must be a 10 digit number">
+                                    @error('mobile')<small class="text-danger">{{ $message }}</small>@enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label ui-label">Message</label>
+                                    <textarea name="message" class="form-control ui-textarea" rows="3" placeholder="I want to know about membership..."></textarea>
+                                    @error('message')<small class="text-danger">{{ $message }}</small>@enderror
+                                </div>
+
+                                <button type="submit" class="btn ui-btn w-100">
+                                    Send Enquiry <i class="ti ti-send ms-1"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        {{-- CONTACT US --}}
+                        <div class="ui-card">
+                            <div class="d-flex align-items-start justify-content-between gap-3">
+                                <div>
+                                    <div class="ui-title">Contact Us</div>
+                                    <div class="ui-subtitle">Get in touch with the gym owner</div>
+                                </div>
+                                <span class="ui-badge ui-badge-success">Available</span>
+                            </div>
+
+                            <hr class="ui-hr">
+
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="ui-avatar" style="width:48px; height:48px;">
+                                    <span>👤</span>
+                                </div>
+                                <div>
+                                    <div class="ui-name">{{ $jymListDetails->owner_name ?? '-' }}</div>
+                                    <div class="ui-muted">Gym Owner</div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3 g-2">
+                                <div class="col-12">
+                                    <div class="ui-chip d-flex align-items-center gap-2">
+                                        <i class="ti ti-phone text-primary" style="font-size:18px;"></i>
+                                        <div>
+                                            <div class="ui-chip-label">Mobile</div>
+                                            <div class="ui-chip-value">{{ $jymListDetails->mobile ?? '-' }}</div>
                                         </div>
                                     </div>
                                 </div>
-                                @endforeach
+                                <div class="col-12">
+                                    <div class="ui-chip d-flex align-items-center gap-2">
+                                        <i class="ti ti-mail text-primary" style="font-size:18px;"></i>
+                                        <div>
+                                            <div class="ui-chip-label">Email</div>
+                                            <div class="ui-chip-value" style="word-break: break-all;">{{ $jymListDetails->email ?? '-' }}</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        @endif
-                    </div>
-
-                    {{-- ================= QUICK ENQUIRY ================= --}}
-                    <div class="ui-card ui-card-soft mt-4">
-                        <div class="d-flex align-items-start justify-content-between">
-                            <div>
-                                <div class="ui-title">Quick Enquiry</div>
-                                <div class="ui-subtitle">Send your query, we’ll contact you soon</div>
-                            </div>
-                            <span class="ui-badge ui-badge-primary">Fast</span>
                         </div>
 
-                        <hr class="ui-hr">
-
-                        <form action="{{ route('Enquiry.store') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="gym_id" value="{{ $jymListDetails->id }}">
-                            
-                            <div class="mb-2">
-                                <label class="form-label ui-label">Your Name <span class="text-danger">*</span></label>
-                                <input type="text" name="name" class="form-control ui-input" placeholder="Enter your name" required maxlength="255">
-                                @error('name')<small class="text-danger">{{ $message }}</small>@enderror
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label ui-label">Mobile Number <span class="text-danger">*</span></label>
-                                <input type="text" name="mobile" class="form-control ui-input" placeholder="10-digit mobile number" required pattern="[0-9]{10}" title="Must be a 10 digit number">
-                                @error('mobile')<small class="text-danger">{{ $message }}</small>@enderror
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label ui-label">Message</label>
-                                <textarea name="message" class="form-control ui-textarea" rows="3" placeholder="I want to know about membership..."></textarea>
-                                @error('message')<small class="text-danger">{{ $message }}</small>@enderror
-                            </div>
-
-                            <button type="submit" class="btn ui-btn w-100">
-                                Send Enquiry <i class="ti ti-send ms-1"></i>
-                            </button>
-                        </form>
                     </div>
-
                 </div>
 
             </div>
