@@ -3,7 +3,7 @@
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
                     <h2 class="font-weight-bold heading text-primary mb-4 about-heading">
-                        Why Choose GymAdda?
+                        Why Choose GymHai?
                     </h2>
                     <p class="text-muted fs-5">
                         We connect fitness enthusiasts with top-quality local gyms securely and quickly.
@@ -69,7 +69,7 @@
                         <div class="feature-text">
                             <h3 class="heading h5 fw-bold mb-2">Secure Payments</h3>
                             <p class="text-muted small">
-                                Pay your gym fees directly through GymAdda with state-of-the-art encryption safely.
+                                Pay your gym fees directly through GymHai with state-of-the-art encryption safely.
                             </p>
                         </div>
                     </div>

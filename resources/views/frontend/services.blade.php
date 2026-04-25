@@ -11,7 +11,7 @@
         <div class="hero-subtitle">Our Services</div>
         <h1 class="hero-title">Empowering the <span>Fitness Ecosystem</span></h1>
         <p class="hero-desc">
-            Whether you are looking for the perfect gym to start your fitness journey, or you are a gym owner wanting to scale your business — GymAdda bridges the gap with cutting-edge technology.
+            Whether you are looking for the perfect gym to start your fitness journey, or you are a gym owner wanting to scale your business — GymHai bridges the gap with cutting-edge technology.
         </p>
     </div>
 </section>

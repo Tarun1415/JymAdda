@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Login | GymAdda</title>
+    <title>Admin Login | GymHai</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/@tabler/icons/iconfont/tabler-icons.min.css" rel="stylesheet">
@@ -265,7 +265,7 @@
     <!-- LEFT: Marketing Banner -->
     <div class="auth-banner">
         <div class="auth-logo">
-            <a href="/"><img src="../images/logo2.png" alt="GymAdda"></a>
+            <a href="/"><img src="../images/logo2.png" alt="GymHai"></a>
         </div>
         
         <div class="auth-banner-content">

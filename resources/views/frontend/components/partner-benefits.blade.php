@@ -7,7 +7,7 @@
             <div class="pb-badge">Gym Owners & Partners</div>
             <h2 class="pb-title">Are you a Gym Owner?</h2>
             <p class="pb-subtitle">
-                Join GymAdda! List your gym, get new customers, manage member fees, and grow your business easily.
+                Join GymHai! List your gym, get new customers, manage member fees, and grow your business easily.
             </p>
         </div>
 

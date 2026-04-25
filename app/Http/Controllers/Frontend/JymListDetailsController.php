@@ -41,7 +41,7 @@ class JymListDetailsController extends Controller
     OpenGraph::setDescription(SEOMeta::getDescription());
     OpenGraph::setUrl(url()->current());
     OpenGraph::addProperty('type', 'place');
-    OpenGraph::setSiteName('GymAdda');
+    OpenGraph::setSiteName('GymHai');
     
     $image = $jymListDetails->seo_image ?? $jymListDetails->gym_image;
     if ($image) {
@@ -50,7 +50,7 @@ class JymListDetailsController extends Controller
     }
     
     TwitterCard::setTitle(SEOMeta::getTitle());
-    TwitterCard::setSite('@GymAddaIndia');
+    TwitterCard::setSite('@GymHaiIndia');
 
     return view('frontend.pages.jym-details', compact('jymListDetails'));
 }

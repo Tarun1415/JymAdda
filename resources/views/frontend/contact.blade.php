@@ -11,7 +11,7 @@
         <div class="ph-subtitle">Contact Us</div>
         <h1 class="ph-title">We're here to <span>help you</span></h1>
         <p class="ph-desc">
-            Have a question about GymAdda, or need support setting up your partner account? Reach out to us 24/7.
+            Have a question about GymHai, or need support setting up your partner account? Reach out to us 24/7.
         </p>
     </div>
 </section>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="info-text">
                     <h4>Email Address</h4>
-                    <span>support@gymadda.com</span>
+                    <span>support@GymHai.com</span>
                 </div>
             </div>
         </div>

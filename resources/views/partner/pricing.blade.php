@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Your Plan | GymAdda</title>
+    <title>Choose Your Plan | GymHai</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -158,7 +158,7 @@
             </div>
         @endif
         <h1>Upgrade Your Plan</h1>
-        <p>Your trial or current plan has expired. Please select a subscription plan to continue growing your gym business with GymAdda.</p>
+        <p>Your trial or current plan has expired. Please select a subscription plan to continue growing your gym business with GymHai.</p>
     </div>
 
     <div class="row g-4 justify-content-center max-w-5xl mx-auto">
@@ -215,7 +215,7 @@
             "key": "{{ $razorpayKey }}",
             "amount": amountInPaise, 
             "currency": "INR",
-            "name": "GymAdda Partner",
+            "name": "GymHai Partner",
             "description": planDescription,
             "image": "{{ asset('images/logo2.png') }}",
             "handler": function (response){

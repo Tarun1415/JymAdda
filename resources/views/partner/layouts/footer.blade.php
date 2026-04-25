@@ -2,7 +2,7 @@
     <div class="footer-wrapper container-fluid">
       <div class="row">
         <div class="col-sm my-1">
-          <p class="m-0">JymAdda &#9829; crafted by Team JymAdda. All rights reserved.</p>
+          <p class="m-0">GymHai &#9829; crafted by Team GymHai. All rights reserved.</p>
         </div>
         <div class="col-auto my-1">
           <ul class="list-inline footer-link mb-0">

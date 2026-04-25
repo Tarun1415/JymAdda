@@ -191,7 +191,7 @@
     <div class="pricing-section">
       <div class="container">
         <div class="pricing-header" data-aos="fade-up">
-          <h2 class="pricing-title">Partner with <span>GymAdda</span></h2>
+          <h2 class="pricing-title">Partner with <span>GymHai</span></h2>
           <p class="pricing-desc">
             Choose the perfect plan to grow your fitness business. Get more leads, manage members easily, and boost your gym's visibility locally.
           </p>

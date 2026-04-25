@@ -15,20 +15,20 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        SEOMeta::setTitle('GymAdda | India\'s #1 Gym Discovery & Fitness Platform');
-        SEOMeta::setDescription('Discover the best gyms, top fitness centers, and specialized workout facilities near you. Join the GymAdda community and accelerate your physical transformation today.');
+        SEOMeta::setTitle('GymHai | India\'s #1 Gym Discovery & Fitness Platform');
+        SEOMeta::setDescription('Discover the best gyms, top fitness centers, and specialized workout facilities near you. Join the GymHai community and accelerate your physical transformation today.');
         SEOMeta::setCanonical(url()->current());
         SEOMeta::setKeywords('gym near me, best fitness center, workout plans, local gym discover, gym memberships, personal trainer, India fitness, bodybuilding');
 
-        OpenGraph::setTitle('GymAdda | Discover the Best Gyms Near You');
+        OpenGraph::setTitle('GymHai | Discover the Best Gyms Near You');
         OpenGraph::setDescription('Find and join the best gyms and fitness centers in your city.');
         OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'website');
-        OpenGraph::setSiteName('GymAdda');
+        OpenGraph::setSiteName('GymHai');
         OpenGraph::addImage(asset('images/jym1.jpg'));
 
-        TwitterCard::setTitle('GymAdda | Find Your Perfect Workout Space');
-        TwitterCard::setSite('@GymAddaIndia');
+        TwitterCard::setTitle('GymHai | Find Your Perfect Workout Space');
+        TwitterCard::setSite('@GymHaiIndia');
         TwitterCard::addValue('card', 'summary_large_image');
         $city = session('user_city');
 
@@ -92,14 +92,14 @@ class HomeController extends Controller
         $searchString = !empty($titleParams) ? ' - ' . implode(', ', $titleParams) : '';
 
         // Dynamic SEO based on Search
-        SEOMeta::setTitle('Explore Gyms & Fitness Centers' . $searchString . ' | GymAdda');
-        SEOMeta::setDescription('Find the best gyms and top-rated fitness centers' . ($city ? ' in '.$city : ' near you') . '. Read comprehensive reviews, check pricing, and join today on GymAdda.');
+        SEOMeta::setTitle('Explore Gyms & Fitness Centers' . $searchString . ' | GymHai');
+        SEOMeta::setDescription('Find the best gyms and top-rated fitness centers' . ($city ? ' in '.$city : ' near you') . '. Read comprehensive reviews, check pricing, and join today on GymHai.');
         SEOMeta::setCanonical(url()->full());
 
-        OpenGraph::setTitle('Find Premium Gyms' . $searchString . ' | GymAdda');
+        OpenGraph::setTitle('Find Premium Gyms' . $searchString . ' | GymHai');
         OpenGraph::setUrl(url()->full());
         OpenGraph::addProperty('type', 'website');
-        OpenGraph::setSiteName('GymAdda');
+        OpenGraph::setSiteName('GymHai');
 
         $sort = trim((string) $request->get('sort', 'newest'));
 

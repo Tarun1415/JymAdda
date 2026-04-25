@@ -37,7 +37,7 @@
                             <h3 class="h5 text-primary mb-3">Priya Sharma</h3>
                             <blockquote>
                                 <p>
-                                    &ldquo;GymAdda made it incredibly easy to find the exact type of gym I was looking
+                                    &ldquo;GymHai made it incredibly easy to find the exact type of gym I was looking
                                     for. I could check if they had AC, proper parking, and real reviews before
                                     committing to a membership!&rdquo;
                                 </p>
@@ -63,7 +63,7 @@
                             <h3 class="h5 text-primary mb-3">Rahul Verma</h3>
                             <blockquote>
                                 <p>
-                                    &ldquo;As a gym owner, listing my fitness center on GymAdda was the best decision.
+                                    &ldquo;As a gym owner, listing my fitness center on GymHai was the best decision.
                                     My footfall increased by 40% in just two months and the CRM helps me track pending
                                     member fees digitally.&rdquo;
                                 </p>
@@ -89,7 +89,7 @@
                             <h3 class="h5 text-primary mb-3">Amit Gupta</h3>
                             <blockquote>
                                 <p>
-                                    &ldquo;I travel often for work and using GymAdda helps me instantly locate top-rated
+                                    &ldquo;I travel often for work and using GymHai helps me instantly locate top-rated
                                     workout spaces nearby. The transaction and gym admission process is completely
                                     smooth.&rdquo;
                                 </p>

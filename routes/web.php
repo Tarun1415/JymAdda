@@ -39,7 +39,7 @@ Route::any('/sitemap.xml', [SitemapController::class, 'index']);
 // ============================================
 // ADMIN ROUTES (User Management & Stats)
 // ============================================
-Route::prefix('jymadda-staff')->name('admin.')->group(function () {
+Route::prefix('gymhai')->name('admin.')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AdminAuthController::class, 'login']);
 

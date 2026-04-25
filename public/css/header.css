@@ -104,8 +104,8 @@
     display: none;
     background: none;
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     cursor: pointer;
     padding: 8px;
     border-radius: var(--radius-sm);
@@ -118,11 +118,11 @@
 
   .toggle-line {
     display: block;
-    width: 24px;
-    height: 2px;
+    width: 30px;
+    height: 3px;
     background: var(--dark);
-    margin: 4px auto;
-    border-radius: 2px;
+    margin: 6px auto;
+    border-radius: 3px;
     transition: var(--transition);
   }
 
@@ -311,9 +311,12 @@
 
   /* Pulse Animation */
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
     }
+
     50% {
       box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3), 0 0 0 10px rgba(99, 102, 241, 0.15);
     }
@@ -327,6 +330,10 @@
   @media (max-width: 991px) {
     .container {
       padding: 0 20px;
+    }
+
+    .logo-container {
+      width: 100%;
     }
 
     .menu-toggle {
@@ -449,7 +456,7 @@
 
   /* Menu Toggle Animation */
   .menu-toggle.active .toggle-line:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: translateY(9px) rotate(45deg);
   }
 
   .menu-toggle.active .toggle-line:nth-child(2) {
@@ -457,5 +464,5 @@
   }
 
   .menu-toggle.active .toggle-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: translateY(-9px) rotate(-45deg);
   }
