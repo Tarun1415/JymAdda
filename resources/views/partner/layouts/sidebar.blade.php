@@ -56,6 +56,17 @@
         </li>
 
         <li class="pc-item pc-caption">
+          <label>Subscription & Billing</label>
+          <i class="ti ti-credit-card"></i>
+        </li>
+        <li class="pc-item {{ request()->routeIs('partner.pricing') ? 'active' : '' }}">
+          <a href="{{ route('partner.pricing') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-credit-card"></i></span>
+            <span class="pc-mtext">Subscription Plan</span>
+          </a>
+        </li>
+
+        <li class="pc-item pc-caption">
           <label>User Contact List</label>
           <i class="ti ti-brand-chrome"></i>
         </li>

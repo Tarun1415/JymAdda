@@ -136,3 +136,44 @@
         }
     }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let currentCity = "{{ session('user_city') }}";
+    
+    // Sirf tab poochhega jab city session me na ho aur pehle kabhi prompt na kiya ho browser me
+    if (!currentCity && !sessionStorage.getItem('geo_location_checked')) {
+        sessionStorage.setItem('geo_location_checked', 'true');
+        
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                let lat = position.coords.latitude;
+                let lon = position.coords.longitude;
+                
+                // Real-time IP aur coordinates se City fetch karne ke liye (Free API no key)
+                fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let detectedCity = data.city || data.locality;
+                        if (detectedCity) {
+                            fetch("{{ route('set.user.city') }}", {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                },
+                                body: JSON.stringify({ city: detectedCity })
+                            }).then(() => {
+                                // City milne ke baad page reload taki list update ho jaye
+                                window.location.reload();
+                            });
+                        }
+                    })
+                    .catch(e => console.log('Location detection failed.'));
+            }, function(error) {
+                console.log("User denied location or error occurred.");
+            });
+        }
+    }
+});
+</script>

@@ -14,7 +14,7 @@
   <meta name="author" content="CodedThemes">
 
   <!-- [Favicon] icon -->
-  <link rel="icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+  <link rel="icon" href="/images/logo2.png" type="image/x-icon">
 
   <!-- [Google Font] Family -->
   <link rel="stylesheet"

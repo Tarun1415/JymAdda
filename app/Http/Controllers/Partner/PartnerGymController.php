@@ -70,6 +70,31 @@ public function StoreJymData(Request $request)
         return redirect()->route('partner.login');
     }
 
+    $request->merge([
+        'slug' => Str::slug($request->slug ?? $request->gym_name)
+    ]);
+
+    $baseSlug = Str::slug($request->gym_name);
+    $suggest1 = $baseSlug . '-' . Str::slug($request->city ?? rand(10,99));
+    $suggest2 = $baseSlug . '-' . rand(100, 999);
+
+    $request->validate([
+        'gym_name' => 'required|string|max:255',
+        'slug'     => 'required|string|unique:gyms,slug',
+        'owner_name'       => 'nullable|string|max:255',
+        'mobile'           => 'nullable|string|max:20',
+        'email'            => 'nullable|email|max:255',
+        'description'      => 'nullable|string',
+        'address'          => 'nullable|string|max:500',
+        'city'             => 'nullable|string|max:100',
+        'state'            => 'nullable|string|max:100',
+        'pincode'          => 'nullable|string|max:20',
+        'gym_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp',
+        'seo_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp',
+    ], [
+        'slug.unique' => "This Gym URL is already taken. Suggestions: $suggest1, $suggest2"
+    ]);
+
     // ✅ Partner fetch (gym_limit yahin se aayega)
     $partner = Partner::where('partner_id', $partnerId)->first();
 
@@ -198,9 +223,18 @@ public function updateJymData(Request $request, $uuid)
         ->where('partner_id', $partnerId)
         ->firstOrFail();
 
+    $request->merge([
+        'slug' => Str::slug($request->slug ?? $request->gym_name)
+    ]);
+
+    $baseSlug = Str::slug($request->gym_name);
+    $suggest1 = $baseSlug . '-' . Str::slug($request->city ?? rand(10,99));
+    $suggest2 = $baseSlug . '-' . rand(100, 999);
+
     // ✅ Validation
     $request->validate([
         'gym_name'         => 'required|string|max:255',
+        'slug'             => 'required|string|unique:gyms,slug,' . $gym->id,
         'owner_name'       => 'nullable|string|max:255',
         'mobile'           => 'nullable|string|max:20',
         'email'            => 'nullable|email|max:255',
@@ -218,10 +252,12 @@ public function updateJymData(Request $request, $uuid)
         'closing_time'      => 'nullable',
         'open_days'         => 'nullable|string|max:100',
 
-        'gym_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|',
+        'gym_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp',
         'seo_title'        => 'nullable|string|max:255',
         'seo_description'  => 'nullable|string|max:1000',
-        'seo_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|',
+        'seo_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp',
+    ], [
+        'slug.unique' => 'This Gym URL is already taken. Please modify the Gym URL manually to make it unique.'
     ]);
 
     /* ============ IMAGE UPDATE (Gym Image) ============ */

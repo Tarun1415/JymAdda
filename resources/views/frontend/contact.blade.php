@@ -34,7 +34,7 @@
                 </div>
                 <div class="info-text">
                     <h4>Head Office</h4>
-                    <span>B-104, Sec-63, Noida, Uttar Pradesh 201301</span>
+                    <span>Sec-66, Noida, Uttar Pradesh 201301</span>
                 </div>
             </div>
 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="info-text">
                     <h4>Phone Support</h4>
-                    <span>+91 98765 43210</span>
+                    <span>+91 9709337924</span>
                 </div>
             </div>
 

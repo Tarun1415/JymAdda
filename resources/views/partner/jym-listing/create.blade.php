@@ -128,12 +128,18 @@
               <div class="row g-4">
                 <div class="col-md-6">
                   <label class="form-label">Gym Name <span class="text-danger">*</span></label>
-                  <input type="text" name="gym_name" id="gym_name" class="form-control" placeholder="E.g. Gold's Gym" required>
+                  <input type="text" name="gym_name" id="gym_name" class="form-control" placeholder="E.g. Gold's Gym" required value="{{ old('gym_name') }}">
+                  @error('gym_name')
+                      <div class="text-danger mt-1" style="font-size: 13px; font-weight: 600;">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label">System Slug</label>
-                  <input type="text" name="slug" id="slug" class="form-control bg-light" placeholder="auto-generated-slug" readonly>
+                  <label class="form-label">Gym url</label>
+                  <input type="text" name="slug" id="slug" class="form-control" placeholder="auto-generated-gym-url" value="{{ old('slug') }}">
+                  @error('slug')
+                      <div class="text-danger mt-1" style="font-size: 13px; font-weight: 600;">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-4">
@@ -160,6 +166,7 @@
               </div>
             </div>
 
+            <br>
             {{-- ================= LOCATION DETAILS ================= --}}
             <div class="form-section">
               <div class="form-section-title">
@@ -187,7 +194,7 @@
                 </div>
               </div>
             </div>
-
+             <br>
             {{-- ================= FACILITIES ================= --}}
             <div class="form-section">
               <div class="form-section-title">
@@ -214,6 +221,7 @@
                 </div>
               </div>
             </div>
+               <br>
 
             {{-- ================= TIMINGS & MEDIA ================= --}}
             <div class="form-section">
@@ -243,6 +251,7 @@
                 </div>
               </div>
             </div>
+               <br>
 
             {{-- ================= SEO DETAILS ================= --}}
             <div class="form-section">
@@ -301,13 +310,33 @@ $(document).ready(function () {
     }
 
     // Slug auto generate
+    let slugEdited = false;
+    $('#slug').on('input', function() {
+        slugEdited = true;
+    });
+
+    {{-- Agar pehle se old slug error k baad aaya hai, toh true maano --}}
+    @if(old('slug'))
+        slugEdited = true;
+    @endif
+
     $('#gym_name').on('keyup', function () {
+        if (!slugEdited) {
+            let text = $(this).val()
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+
+            $('#slug').val(text);
+        }
+    });
+
+    $('#slug').on('keyup', function () {
         let text = $(this).val()
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/(^-|-$)/g, '');
-
-        $('#slug').val(text);
+        $(this).val(text);
     });
 });
 </script>

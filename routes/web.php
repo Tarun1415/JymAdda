@@ -32,6 +32,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/contact-submit', [HomeController::class, 'contactSubmit'])->name('contact.submit');
 Route::post('/gym-enquiry', [EnquiryController::class, 'store'])->name('Enquiry.store');
 Route::post('/gym-review', [ReviewController::class, 'store'])->name('Review.store');
+Route::post('/set-user-city', [HomeController::class, 'setUserCity'])->name('set.user.city');
 
 // Sitemap & SEO
 Route::any('/sitemap.xml', [SitemapController::class, 'index']);
