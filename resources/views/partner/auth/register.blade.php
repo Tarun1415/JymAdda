@@ -106,7 +106,7 @@
             font-size: 15px;
             font-weight: 800;
             margin-bottom: 24px;
-            margin-top: 40px;
+            margin-top: 45px;
             /* Space for absolute logo */
             box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
             animation: pulseTrial 2s infinite;
@@ -199,9 +199,21 @@
             max-width: 540px;
         }
 
+        /* Mobile Header Row */
+        .mobile-header-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .auth-logo-mobile {
+            display: none; /* hidden by default, shown via media query or bootstrap */
+        }
+
         @media (max-width: 992px) {
             .auth-wrapper {
                 flex-direction: column;
+                padding-bottom: 85px; /* Prevent overlap with bottom nav */
             }
 
             .auth-banner {
@@ -215,15 +227,27 @@
                 padding: 40px 24px;
             }
 
-            .auth-logo {
-                position: relative;
-                top: 0;
-                left: 0;
-                margin-bottom: 30px;
+            .mobile-header-row {
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+            .auth-logo-mobile {
+                display: block;
+            }
+            .auth-logo-mobile img {
+                height: 32px; /* Fit nicely beside badge */
+            }
+
+            .auth-logo-desktop {
+                display: none !important;
             }
 
             .trial-badge {
                 margin-top: 0;
+                margin-bottom: 0;
+                padding: 6px 12px;
+                font-size: 11px;
             }
 
             .auth-title {
@@ -382,6 +406,88 @@
                 gap: 0;
             }
         }
+
+        /* --- Mobile Bottom Nav (Sleek App Design) --- */
+        .mobile-bottom-nav {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .auth-wrapper {
+                padding-bottom: 85px; /* Prevent overlap with the form */
+            }
+            .mobile-bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+                z-index: 9999;
+                justify-content: space-around;
+                align-items: center;
+                height: 65px;
+                border-top: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #64748b;
+                font-size: 11px;
+                font-weight: 600;
+                transition: all 0.2s ease;
+                flex: 1;
+                height: 100%;
+            }
+            .nav-item svg {
+                width: 22px;
+                height: 22px;
+                margin-bottom: 4px;
+                stroke: currentColor;
+                transition: all 0.2s ease;
+            }
+            .nav-item:hover, .nav-item.active {
+                color: var(--primary);
+            }
+            .nav-item.active svg {
+                transform: translateY(-2px);
+                stroke-width: 2.5;
+            }
+            
+            /* The floating center button (Brought down, no text) */
+            .nav-item.center-pop {
+                flex: 1;
+                justify-content: center;
+                padding-bottom: 0;
+            }
+            .nav-item.center-pop .icon-wrapper {
+                background: linear-gradient(135deg, var(--primary) 0%, #4338ca 100%);
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+                transition: transform 0.2s ease;
+            }
+            .nav-item.center-pop:active .icon-wrapper {
+                transform: scale(0.92);
+            }
+            .nav-item.center-pop .icon-wrapper svg {
+                width: 22px;
+                height: 22px;
+                color: #fff;
+                stroke: #fff;
+                margin: 0;
+            }
+        }
     </style>
 </head>
 
@@ -390,13 +496,18 @@
 
         <!-- LEFT: Marketing Banner -->
         <div class="auth-banner">
-            <div class="auth-logo">
+            <div class="auth-logo auth-logo-desktop">
                 <a href="/"><img src="../images/logo2.png" alt="GymHai"></a>
             </div>
 
             <div class="auth-banner-content">
-                <div class="trial-badge">
-                    <i class="ti ti-star-filled"></i> Claim Your 1 Month Free Trial
+                <div class="mobile-header-row">
+                    <div class="auth-logo-mobile">
+                        <a href="/"><img src="../images/logo2.png" alt="GymHai"></a>
+                    </div>
+                    <div class="trial-badge">
+                        <i class="ti ti-star-filled"></i> Claim Your 1 Month Free Trial
+                    </div>
                 </div>
 
                 <h1 class="auth-title">List your gym.<br><span>Get more members.</span></h1>
@@ -599,6 +710,35 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="/partner/register" class="nav-item active">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <line x1="19" y1="8" x2="19" y2="14"></line>
+                <line x1="22" y1="11" x2="16" y2="11"></line>
+            </svg>
+            <span>Register</span>
+        </a>
+        <a href="/" class="nav-item center-pop">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </div>
+        </a>
+        <a href="/partner/login" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                <polyline points="10 17 15 12 10 7"></polyline>
+                <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            <span>Login</span>
+        </a>
     </div>
 
     <script>

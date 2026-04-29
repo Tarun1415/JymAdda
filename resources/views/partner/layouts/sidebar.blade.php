@@ -16,13 +16,13 @@
         </li>
 
         <li class="pc-item pc-caption">
-          <label>JYM List Part</label>
+          <label>GYM List Part</label>
           <i class="ti ti-dashboard"></i>
         </li>
         <li class="pc-item {{ request()->is('partner/gymlist-dashboard', 'partner/gyms-*') ? 'active' : '' }}">
           <a href="/partner/gymlist-dashboard" class="pc-link">
             <span class="pc-micon"><i class="ti ti-typography"></i></span>
-            <span class="pc-mtext">JYM List Dashboard</span>
+            <span class="pc-mtext">GYM List Dashboard</span>
           </a>
         </li>
         <li class="pc-item {{ request()->routeIs('Partnerjym.gallery.*') ? 'active' : '' }}">
