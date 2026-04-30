@@ -1,3 +1,20 @@
+
+<style>
+  .hero-slide .img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.hero-slide .img.active {
+  opacity: 1;
+}
+</style>
+
+
 <div class="hero hero-modern">
   <div class="hero-slide" id="heroBgSlider">
     <div class="img overlay" style="background-image: url('{{ asset('images/jym1.jpg') }}')"></div>
@@ -68,7 +85,7 @@
                   </svg>
               </div>
               <div class="text-start ms-3">
-                  <div style="font-size: 0.75rem; color: #e2e8f0; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Partner With Us</div>
+                  <div style="font-size: 0.75rem; color: #e2e8f0; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Grow Your Gym With Us</div>
                   <div style="font-size: 1.1rem; color: #FFD700; font-weight: 700; margin-top: 2px;">List Your Gym Free</div>
               </div>
               <div class="ms-auto" style="background: #FFD700; color: #000; border-radius: 50%; padding: 6px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 10px rgba(255,215,0,0.4);">
@@ -109,9 +126,6 @@
 
 @push('scripts')
 <script>
-/* =========================
-   ✅ HERO BACKGROUND SLIDER (AUTO FADE)
-========================= */
 (function () {
   const slider = document.getElementById('heroBgSlider');
   if (!slider) return;
@@ -120,27 +134,18 @@
   if (!slides.length) return;
 
   let i = 0;
-  const interval = 3500; 
+  const interval = 3500;
 
+  // ✅ First slide ko properly set karo
   slides.forEach((el, idx) => {
-    el.style.opacity = (idx === 0) ? '1' : '0';
-    el.style.zIndex = (idx === 0) ? '1' : '0';
+    el.classList.remove('active');
   });
+  slides[0].classList.add('active');
 
   setInterval(() => {
-    const current = slides[i];
-    const nextIndex = (i + 1) % slides.length;
-    const next = slides[nextIndex];
-
-    next.style.zIndex = '2';
-    next.style.opacity = '1';
-    current.style.opacity = '0';
-
-    setTimeout(() => {
-      current.style.zIndex = '0';
-      next.style.zIndex = '1';
-      i = nextIndex;
-    }, 850); 
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
   }, interval);
 })();
 

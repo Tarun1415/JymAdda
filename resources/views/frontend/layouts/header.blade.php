@@ -48,7 +48,7 @@
                                 <span class="cta-text">List Your Gym</span>
                             </div>
                             <div class="cta-badge">
-                                <span class="badge-text">30 Days FREE</span>
+                                <span class="badge-text">FREE</span>
                                 <span class="badge-icon">🎉</span>
                             </div>
                             <div class="cta-hover-effect"></div>
