@@ -62,7 +62,7 @@
           <a href="#!" class="pc-head-link bg-transparent"><i class="ti ti-x text-danger"></i></a>
         </div>
         <div class="dropdown-divider"></div>
-        <div class="dropdown-header px-0 text-wrap header-notification-scroll position-relative" style="max-height: calc(100vh - 215px)">
+        {{-- <div class="dropdown-header px-0 text-wrap header-notification-scroll position-relative" style="max-height: calc(100vh - 215px)">
           <div class="list-group list-group-flush w-100">
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
@@ -113,7 +113,7 @@
               </div>
             </a>
           </div>
-        </div>
+        </div> --}}
         <div class="dropdown-divider"></div>
         <div class="text-center py-2">
           <a href="#!" class="link-primary">View all</a>
@@ -196,11 +196,12 @@
             </a>
             
           </div>
-          <div class="tab-pane fade" id="drp-tab-2" role="tabpanel" aria-labelledby="drp-t2" tabindex="0">
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-help"></i>
-              <span>Support</span>
-            </a>
+      <div class="tab-pane fade" id="drp-tab-2" role="tabpanel" aria-labelledby="drp-t2" tabindex="0">
+    <a href="{{ url('/contact') }}" class="dropdown-item" target="_blank">
+        <i class="ti ti-help"></i>
+        <span>Support</span>
+    </a>
+
             @if(session()->has('partner_token'))
               <a href="{{ route('Partnerjym.profile', session('partner_token')) }}#password" class="dropdown-item">
             @else

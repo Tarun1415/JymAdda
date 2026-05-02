@@ -6,12 +6,13 @@
         <img src="/images/logo2.png" class="img-fluid" alt="logo">
       </a>
     </div>
+    <br>
     <div class="navbar-content">
       <ul class="pc-navbar">
         <li class="pc-item {{ request()->is('partner/dashboard') ? 'active' : '' }}">
           <a href="/partner/dashboard" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
-            <span class="pc-mtext">Dashboard</span>
+            <span class="pc-mtext">Partner Dashboard</span>
           </a>
         </li>
 
@@ -55,7 +56,7 @@
           </a>
         </li>
 
-        <li class="pc-item pc-caption">
+        {{-- <li class="pc-item pc-caption">
           <label>Subscription & Billing</label>
           <i class="ti ti-credit-card"></i>
         </li>
@@ -64,10 +65,10 @@
             <span class="pc-micon"><i class="ti ti-credit-card"></i></span>
             <span class="pc-mtext">Subscription Plan</span>
           </a>
-        </li>
+        </li> --}}
 
         <li class="pc-item pc-caption">
-          <label>User Contact List</label>
+          <label>User Enquiry leads</label>
           <i class="ti ti-brand-chrome"></i>
         </li>
         {{-- <li class="pc-item pc-hasmenu">
@@ -108,7 +109,7 @@
         <li class="pc-item {{ request()->routeIs('Partnerjym.enquiries.index') ? 'active' : '' }}">
           <a href="{{ route('Partnerjym.enquiries.index') }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-messages"></i></span>
-            <span class="pc-mtext">User Contact Us</span>
+            <span class="pc-mtext">User Enquiry leads</span>
           </a>
         </li>
       </ul>
