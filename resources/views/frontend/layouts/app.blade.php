@@ -23,11 +23,11 @@
 
         <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/logo2.png">
-    <link rel="stylesheet" href="fonts/icomoon/style.css" />
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="{{ asset('fonts/icomoon/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}" />
 
-    <link rel="stylesheet" href="css/tiny-slider.css" />
-    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="{{ asset('css/tiny-slider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/hero-search.css') }}" />
@@ -64,12 +64,12 @@
         </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/tiny-slider.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/tiny-slider.js') }}"></script>
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/counter.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 
     @stack('scripts')
 </body>

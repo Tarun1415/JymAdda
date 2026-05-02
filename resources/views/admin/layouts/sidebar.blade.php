@@ -29,8 +29,13 @@
             <span class="pc-mtext">Registered Partners</span>
           </a>
         </li>
+        <li class="pc-item {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
+          <a href="{{ route('admin.blogs.index') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-book"></i></span>
+            <span class="pc-mtext">Gymhai Blogs</span>
+          </a>
+        </li>
 
-        @if(auth()->check() && auth()->user()->role === 'admin')
         <li class="pc-item pc-caption">
           <label>Super Admin Controls</label>
           <i class="ti ti-lock"></i>
@@ -41,7 +46,6 @@
             <span class="pc-mtext">User Management</span>
           </a>
         </li>
-        @endif
       </ul>
     </div>
   </div>

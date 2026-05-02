@@ -242,6 +242,7 @@
                     <ul class="footer-links">
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ route('gyms.index') }}">Explore Gyms</a></li>
+                        <li><a href="{{ route('blogs.index') }}">Gymhai Blogs</a></li>
                         <li><a href="{{ route('services') }}">Our Services</a></li>
                         <li><a href="{{ route('about') }}">About Us</a></li>
                         <li><a href="{{ route('contact') }}">Contact Support</a></li>

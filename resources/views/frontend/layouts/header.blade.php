@@ -1,12 +1,12 @@
 <nav class="site-nav">
-    <div class="container">
-        <div class="menu-bg-wrap">
+    <div class="menu-bg-wrap">
+        <div class="container">
             <div class="site-navigation">
 
                 <!-- Logo with modern design -->
                 <div class="logo-container">
                     <a href="/" class="logo">
-                        <img src="images/logo2.png" alt="GymHai" class="logo-image">
+                        <img src="{{ asset('images/logo2.png') }}" alt="GymHai" class="logo-image">
                         <div class="logo-text">
                             <span class="logo-main">GymHai</span>
                             <span class="logo-sub">Fitness Hub Network</span>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Partners\Gym;
+use App\Models\GymhaiBlog;
 use Illuminate\Http\Request;
 
 class SitemapController extends Controller
@@ -15,7 +16,11 @@ class SitemapController extends Controller
             ->select('slug', 'updated_at')
             ->get();
 
-        return response()->view('frontend.sitemap', compact('activeGyms'))
+        $blogs = GymhaiBlog::where('status', 'published')
+            ->select('slug', 'updated_at')
+            ->get();
+
+        return response()->view('frontend.sitemap', compact('activeGyms', 'blogs'))
                          ->header('Content-Type', 'text/xml');
     }
 }

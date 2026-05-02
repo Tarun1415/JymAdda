@@ -3,7 +3,7 @@
 <!-- [Head] start -->
 <head>
 
-  <title>Home | Mantis Bootstrap 5 Admin Template</title>
+  <title>GymHai | India's #1 Gym Discovery & Fitness Platform</title>
 
   <!-- [Meta] -->
   <meta charset="utf-8">

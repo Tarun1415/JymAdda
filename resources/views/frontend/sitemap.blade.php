@@ -47,4 +47,24 @@
         @endforeach
     @endif
 
+    <!-- Static Blog Page -->
+    <url>
+        <loc>{{ $siteurl }}/blogs</loc>
+        <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z') }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Dynamic Blogs Loop -->
+    @if (!empty($blogs))
+        @foreach ($blogs as $blog)
+            <url>
+                <loc>{{ route('blogs.show', $blog->slug) }}</loc>
+                <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z', strtotime($blog->updated_at)) }}</lastmod>
+                <changefreq>daily</changefreq>
+                <priority>0.7</priority>
+            </url>
+        @endforeach
+    @endif
+
 </urlset>

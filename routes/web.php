@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\EnquiryController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\JymListDetailsController;
 use App\Http\Controllers\Frontend\ReviewController;
+use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\SitemapController;
 use App\Http\Controllers\Partner\Auth\AuthController;
 use App\Http\Controllers\Partner\PartnerDashboardController;
@@ -37,6 +38,7 @@ Route::post('/gym-enquiry', [EnquiryController::class, 'store'])->name('Enquiry.
 Route::post('/gym-review', [ReviewController::class, 'store'])->name('Review.store');
 Route::post('/set-user-city', [HomeController::class, 'setUserCity'])->name('set.user.city');
 
+
 // Sitemap & SEO
 Route::any('/sitemap.xml', [SitemapController::class, 'index']);
 
@@ -57,10 +59,16 @@ Route::prefix('gymhai')->name('admin.')->group(function () {
         // Platform Data Management
         Route::resource('gyms', AdminGymController::class)->scoped(['gym' => 'uuid'])->except(['create', 'store', 'show']);
         Route::resource('partners', AdminPartnerController::class)->except(['create', 'store', 'show']);
+        
+        Route::patch('blogs/{blog}/status', [\App\Http\Controllers\Admin\BlogController::class, 'updateStatus'])->name('blogs.status');
+        Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
     });
 });
 
-// THIS MUST BE LAST
+// Blogs (Frontend)
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
+
 Route::get('/{slug}', [JymListDetailsController::class, 'getJymDetails'])->name('Jymlist.details');
 
 Route::any('partner/register', [AuthController::class, 'signup']);

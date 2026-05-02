@@ -18,14 +18,14 @@ class HomeController extends Controller
         SEOMeta::setTitle('GymHai | India\'s #1 Gym Discovery & Fitness Platform');
         SEOMeta::setDescription('Discover the best gyms, top fitness centers, and specialized workout facilities near you. Join the GymHai community and accelerate your physical transformation today.');
         SEOMeta::setCanonical(url()->current());
-        SEOMeta::setKeywords('gym near me, best fitness center, workout plans, local gym discover, gym memberships, personal trainer, India fitness, bodybuilding');
+        SEOMeta::setKeywords('gym near me, best fitness center, workout plans, local gym discover, gym memberships, personal trainer, India fitness,gymhai,gym hai, bodybuilding');
 
         OpenGraph::setTitle('GymHai | Discover the Best Gyms Near You');
         OpenGraph::setDescription('Find and join the best gyms and fitness centers in your city.');
         OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'website');
         OpenGraph::setSiteName('GymHai');
-        OpenGraph::addImage(asset('images/jym1.jpg'));
+        OpenGraph::addImage(asset('images/jym1.jpg'));  
 
         TwitterCard::setTitle('GymHai | Find Your Perfect Workout Space');
         TwitterCard::setSite('@GymHaiIndia');

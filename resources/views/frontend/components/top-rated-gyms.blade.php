@@ -30,6 +30,10 @@
                                             <img src="{{ $img }}"
                                                 style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;"
                                                 alt="{{ $gym->gym_name }}">
+                                            <div class="gym-badge-verified"
+                                                style="position: absolute; top: 16px; left: 16px; background: rgba(16, 185, 129, 0.95); padding: 4px 10px; border-radius: 20px; font-weight: 700; font-size: 12px; color: #ffffff; display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2);">
+                                                <i class="ti ti-shield-check"></i> Verified
+                                            </div>
                                             <div class="gym-badge-rating"
                                                 style="position: absolute; top: 16px; right: 16px; background: rgba(255, 255, 255, 0.95); padding: 6px 12px; border-radius: 20px; font-weight: 800; font-size: 14px; color: #f59e0b; display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); backdrop-filter: blur(4px);">
                                                 ★ <span style="color: #0f172a;">{{ $gym->rating ?? '0.0' }}</span>
