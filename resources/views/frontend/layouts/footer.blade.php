@@ -307,9 +307,9 @@
                 &copy; {{ date('Y') }} GymHai Platform. All Rights Reserved.
             </p>
             <div class="legal-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Refund Policy</a>
+                <a href="{{ route('privacy.policy') }}">Privacy Policy</a>
+                <a href="{{ route('terms.conditions') }}">Terms & Conditions</a>
+                <a href="{{ route('refund.policy') }}">Refund Policy</a>
             </div>
         </div>
     </div>

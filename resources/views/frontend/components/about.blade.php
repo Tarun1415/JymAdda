@@ -5,8 +5,8 @@
                     <h2 class="font-weight-bold heading text-primary mb-4 about-heading">
                         Why Choose GymHai?
                     </h2>
-                    <p class="text-muted fs-5">
-                        We connect fitness enthusiasts with top-quality local gyms securely and quickly.
+                    <p class="text-muted fs-5" style="line-height: 1.6;">
+                        GymHai is a complete fitness ecosystem designed to bridge the gap between fitness enthusiasts and modern gym owners through smart technology and transparent services.
                     </p>
                 </div>
             </div>
@@ -21,19 +21,16 @@
                     <div class="d-flex feature-h mb-4">
                         <span class="wrap-icon me-3 bg-primary text-white"
                             style="border-radius: 16px; min-width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
+                            <!-- Search / User Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                             </svg>
                         </span>
                         <div class="feature-text">
-                            <h3 class="heading h5 fw-bold mb-2">Verified Gyms</h3>
-                            <p class="text-muted small">
-                                Every fitness center is properly verified to ensure you get exactly what you see.
+                            <h3 class="heading h5 fw-bold mb-2">For Fitness Enthusiasts</h3>
+                            <p class="text-muted small" style="line-height: 1.6;">
+                                Discover verified fitness centers, compare subscription plans, and read genuine reviews. Book your next workout with complete transparency and zero hidden fees.
                             </p>
                         </div>
                     </div>
@@ -41,18 +38,17 @@
                     <div class="d-flex feature-h mb-4">
                         <span class="wrap-icon me-3 bg-primary text-white"
                             style="border-radius: 16px; min-width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            <!-- Dashboard / Chart Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
                             </svg>
                         </span>
                         <div class="feature-text">
-                            <h3 class="heading h5 fw-bold mb-2">Trusted Partners</h3>
-                            <p class="text-muted small">
-                                We work closely with gym owners to ensure high standards of equipment and hygiene.
+                            <h3 class="heading h5 fw-bold mb-2">Advanced Partner Dashboard</h3>
+                            <p class="text-muted small" style="line-height: 1.6;">
+                                Gym owners can manage members, track active subscriptions, generate invoices, and automate their daily business operations effortlessly.
                             </p>
                         </div>
                     </div>
@@ -60,16 +56,15 @@
                     <div class="d-flex feature-h mb-4">
                         <span class="wrap-icon me-3 bg-primary text-white"
                             style="border-radius: 16px; min-width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            <!-- Security / Shield Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                             </svg>
                         </span>
                         <div class="feature-text">
-                            <h3 class="heading h5 fw-bold mb-2">Secure Payments</h3>
-                            <p class="text-muted small">
-                                Pay your gym fees directly through GymHai with state-of-the-art encryption safely.
+                            <h3 class="heading h5 fw-bold mb-2">Secure & Reliable</h3>
+                            <p class="text-muted small" style="line-height: 1.6;">
+                                Built with industry-leading security standards. Your personal data, payment information, and business records are always safe and encrypted.
                             </p>
                         </div>
                     </div>
