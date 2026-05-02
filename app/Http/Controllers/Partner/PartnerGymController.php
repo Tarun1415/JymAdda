@@ -53,10 +53,11 @@ public function addJymData()
     $alreadyAdded = Gym::where('partner_id', $partnerId)->count();
 
     if ($alreadyAdded >= $allowedGymLimit) {
-        return redirect()->route('Partnerjym.index')->with(
-            'error',
-            "Your current '" . ucfirst($planName) . "' plan only allows adding up to $allowedGymLimit gym(s). Please upgrade your plan to add more."
-        );
+        return redirect()->route('Partnerjym.index')->with([
+            'error_icon' => 'warning',
+            'error_title' => 'Upgrade Required 🚀',
+            'error' => "You have reached the maximum limit of <b>$allowedGymLimit gym(s)</b> on your current <b>" . ucfirst($planName) . "</b> plan.<br><br>To add more gyms, please <a href='" . route('partner.pricing') . "' style='color: #4f46e5; font-weight: bold; text-decoration: underline;'>Upgrade Your Plan</a>."
+        ]);
     }
 
     return view('partner.jym-listing.create', compact('partnerId'));
@@ -81,11 +82,13 @@ public function StoreJymData(Request $request)
     $request->validate([
         'gym_name' => 'required|string|max:255',
         'slug'     => 'required|string|unique:gyms,slug',
+        'gym_type' => 'required|in:unisex,male,female',
         'owner_name'       => 'nullable|string|max:255',
-        'mobile'           => 'nullable|string|max:20',
+        'mobile'           => 'required|digits:10',
         'email'            => 'nullable|email|max:255',
         'description'      => 'nullable|string',
         'address'          => 'nullable|string|max:500',
+        'google_map_link'  => 'nullable|url|max:500',
         'city'             => 'nullable|string|max:100',
         'state'            => 'nullable|string|max:100',
         'pincode'          => 'nullable|string|max:20',
@@ -116,10 +119,11 @@ public function StoreJymData(Request $request)
 
     // 🚫 Limit reached
     if ($alreadyAdded >= $allowedGymLimit) {
-        return redirect()->back()->with(
-            'error',
-            "Your current '" . ucfirst($planName) . "' plan only allows adding up to $allowedGymLimit gym(s). Please upgrade your plan to add more."
-        );
+        return redirect()->back()->with([
+            'error_icon' => 'warning',
+            'error_title' => 'Upgrade Required 🚀',
+            'error' => "You have reached the maximum limit of <b>$allowedGymLimit gym(s)</b> on your current <b>" . ucfirst($planName) . "</b> plan.<br><br>To add more gyms, please <a href='" . route('partner.pricing') . "' style='color: #4f46e5; font-weight: bold; text-decoration: underline;'>Upgrade Your Plan</a>."
+        ]);
     }
 
     /* ============ IMAGE UPLOAD ============ */
@@ -164,6 +168,7 @@ public function StoreJymData(Request $request)
         'partner_id' => $partnerId,
 
         'gym_name'   => $request->gym_name,
+        'gym_type'   => $request->gym_type,
         'slug'       => Str::slug($request->gym_name),
         'owner_name' => $request->owner_name,
         'mobile'     => $request->mobile,
@@ -171,6 +176,7 @@ public function StoreJymData(Request $request)
 
         'description' => $request->description,
         'address'     => $request->address,
+        'google_map_link' => $request->google_map_link,
         'city'        => $request->city,
         'state'       => $request->state,
         'pincode'     => $request->pincode,
@@ -235,12 +241,14 @@ public function updateJymData(Request $request, $uuid)
     $request->validate([
         'gym_name'         => 'required|string|max:255',
         'slug'             => 'required|string|unique:gyms,slug,' . $gym->id,
+        'gym_type'         => 'required|in:unisex,male,female',
         'owner_name'       => 'nullable|string|max:255',
-        'mobile'           => 'nullable|string|max:20',
+        'mobile'           => 'required|digits:10',
         'email'            => 'nullable|email|max:255',
 
         'description'      => 'nullable|string',
         'address'          => 'nullable|string|max:500',
+        'google_map_link'  => 'nullable|url|max:500',
         'city'             => 'nullable|string|max:100',
         'state'            => 'nullable|string|max:100',
         'pincode'          => 'nullable|string|max:20',
@@ -309,6 +317,7 @@ public function updateJymData(Request $request, $uuid)
     /* ============ UPDATE GYM ============ */
     $gym->update([
         'gym_name'   => $request->gym_name,
+        'gym_type'   => $request->gym_type,
         'slug'       => Str::slug($request->gym_name),
 
         'owner_name' => $request->owner_name,
@@ -317,6 +326,7 @@ public function updateJymData(Request $request, $uuid)
 
         'description' => $request->description,
         'address'     => $request->address,
+        'google_map_link' => $request->google_map_link,
         'city'        => $request->city,
         'state'       => $request->state,
         'pincode'     => $request->pincode,

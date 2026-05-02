@@ -142,19 +142,34 @@
                   @enderror
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
+                  <label class="form-label">Gym Type <span class="text-danger">*</span></label>
+                  <select name="gym_type" class="form-select" required>
+                      <option value="unisex" {{ old('gym_type') == 'unisex' ? 'selected' : '' }}>Unisex</option>
+                      <option value="male" {{ old('gym_type') == 'male' ? 'selected' : '' }}>Male Only</option>
+                      <option value="female" {{ old('gym_type') == 'female' ? 'selected' : '' }}>Female Only</option>
+                  </select>
+                  @error('gym_type')
+                      <div class="text-danger mt-1" style="font-size: 13px; font-weight: 600;">{{ $message }}</div>
+                  @enderror
+                </div>
+
+                <div class="col-md-6">
                   <label class="form-label">Owner Name</label>
-                  <input type="text" name="owner_name" class="form-control" placeholder="E.g. Rahul Sharma">
+                  <input type="text" name="owner_name" class="form-control" placeholder="E.g. Rahul Sharma" value="{{ old('owner_name') }}">
                 </div>
 
-                <div class="col-md-4">
-                  <label class="form-label">Mobile Number</label>
-                  <input type="text" name="mobile" class="form-control" placeholder="10-digit number">
+                <div class="col-md-6">
+                  <label class="form-label">Mobile Number <span class="text-danger">*</span></label>
+                  <input type="text" name="mobile" class="form-control" placeholder="10-digit number" value="{{ old('mobile') }}" pattern="\d{10}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                  @error('mobile')
+                      <div class="text-danger mt-1" style="font-size: 13px; font-weight: 600;">{{ $message }}</div>
+                  @enderror
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <label class="form-label">Email Address</label>
-                  <input type="email" name="email" class="form-control" placeholder="contact@example.com">
+                  <input type="email" name="email" class="form-control" placeholder="contact@example.com" value="{{ old('email') }}">
                 </div>
 
                 <input type="hidden" name="status" value="pending">
@@ -173,9 +188,17 @@
                   <i class="ti ti-map-pin"></i> Location Details
               </div>
               <div class="row g-4">
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <label class="form-label">Full Address</label>
-                  <textarea name="address" class="form-control" rows="2" placeholder="E.g. 123 Main Street, Sector 4"></textarea>
+                  <textarea name="address" class="form-control" rows="2" placeholder="E.g. 123 Main Street, Sector 4">{{ old('address') }}</textarea>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Google Map Link</label>
+                  <textarea name="google_map_link" class="form-control" rows="2" placeholder="E.g. https://maps.google.com/...">{{ old('google_map_link') }}</textarea>
+                  @error('google_map_link')
+                      <div class="text-danger mt-1" style="font-size: 13px; font-weight: 600;">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-4">
@@ -256,7 +279,7 @@
             {{-- ================= SEO DETAILS ================= --}}
             <div class="form-section">
               <div class="form-section-title">
-                  <i class="ti ti-search"></i> SEO Optimization
+                  <i class="ti ti-search"></i> SEO Optimization <span style="font-size: 14px; color: #64748b; font-weight: normal; margin-left: 5px;">(Optional)</span>
               </div>
               <div class="row g-4">
                 <div class="col-md-6">

@@ -43,6 +43,7 @@ class AdminGymController extends Controller
     {
         $request->validate([
             'gym_name'         => 'required|string|max:255',
+            'gym_type'         => 'required|in:unisex,male,female',
             'owner_name'       => 'nullable|string|max:255',
             'mobile'           => 'nullable|string|max:20',
             'email'            => 'nullable|email|max:255',
@@ -50,6 +51,7 @@ class AdminGymController extends Controller
 
             'description'      => 'nullable|string',
             'address'          => 'nullable|string|max:500',
+            'google_map_link'  => 'nullable|url|max:500',
             'city'             => 'nullable|string|max:100',
             'state'            => 'nullable|string|max:100',
             'pincode'          => 'nullable|string|max:20',
@@ -100,6 +102,7 @@ class AdminGymController extends Controller
 
         $gym->update([
             'gym_name'   => $request->gym_name,
+            'gym_type'   => $request->gym_type,
             'slug'       => Str::slug($request->gym_name),
             'owner_name' => $request->owner_name,
             'mobile'     => $request->mobile,
@@ -108,6 +111,7 @@ class AdminGymController extends Controller
 
             'description' => $request->description,
             'address'     => $request->address,
+            'google_map_link' => $request->google_map_link,
             'city'        => $request->city,
             'state'       => $request->state,
             'pincode'     => $request->pincode,

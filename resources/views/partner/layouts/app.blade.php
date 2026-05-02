@@ -119,9 +119,9 @@
   @if(session('error'))
   <script>
       Swal.fire({
-          icon: 'error',
-          title: 'Action Failed',
-          text: "{!! session('error') !!}",
+          icon: "{!! session('error_icon', 'error') !!}",
+          title: "{!! session('error_title', 'Oops!') !!}",
+          html: "{!! session('error') !!}",
           confirmButtonColor: '#e3342f'
       });
   </script>
