@@ -228,6 +228,9 @@
             padding: 40px 50px;
             justify-content: center;
         }
+        .featured-card.no-image .blog-card-body {
+            width: 100%;
+        }
         .featured-card .blog-title {
             font-size: 2.5rem;
             -webkit-line-clamp: 3;
@@ -287,16 +290,14 @@
             <div class="row g-5">
                 @forelse($blogs as $key => $blog)
                     <div class="col-lg-4 col-md-6 {{ $key === 0 && $blogs->currentPage() == 1 ? 'col-lg-12 col-md-12' : '' }}">
-                        <a href="{{ route('blogs.show', $blog->slug) }}" class="blog-card {{ $key === 0 && $blogs->currentPage() == 1 ? 'featured-card' : '' }}">
+                        <a href="{{ route('blogs.show', $blog->slug) }}" class="blog-card {{ $key === 0 && $blogs->currentPage() == 1 ? 'featured-card' : '' }} {{ empty($blog->featured_image) ? 'no-image' : '' }}">
                             
+                            @if(!empty($blog->featured_image))
                             <div class="blog-img-wrapper">
                                 <span class="category-tag"><i class="ti ti-flame"></i> Fitness</span>
-                                @if($blog->featured_image)
-                                    <img src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}">
-                                @else
-                                    <img src="{{ asset('images/img_1.jpg') }}" alt="{{ $blog->title }}">
-                                @endif
+                                <img src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" onerror="this.closest('.blog-card').classList.add('no-image'); this.closest('.blog-img-wrapper').style.display='none';">
                             </div>
+                            @endif
                             
                             <div class="blog-card-body">
                                 <div class="blog-meta-row">

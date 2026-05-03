@@ -71,7 +71,7 @@ Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show')
 
 Route::get('/{slug}', [JymListDetailsController::class, 'getJymDetails'])->name('Jymlist.details');
 
-Route::any('partner/register', [AuthController::class, 'signup']);
+Route::any('partner/register', [AuthController::class, 'signup'])->name('partner.register');
 Route::any('partner/login', [AuthController::class, 'login'])->name('partner.login');
 
 Route::middleware(['partner.auth'])->group(function () {

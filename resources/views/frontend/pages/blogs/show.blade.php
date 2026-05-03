@@ -358,6 +358,17 @@
             color: var(--blog-primary);
         }
 
+        .sidebar-post-desc {
+            font-size: 13px;
+            color: var(--blog-text-muted);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
         .sidebar-post-date {
             font-size: 11px;
             font-weight: 700;
@@ -367,6 +378,21 @@
             display: flex;
             align-items: center;
             gap: 6px;
+        }
+
+        .sidebar-read-more {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--blog-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+            transition: gap 0.2s;
+        }
+
+        .sidebar-post:hover .sidebar-read-more {
+            gap: 8px;
         }
 
         .sidebar-post-date i {
@@ -413,9 +439,9 @@
                             @endif
                         </div>
 
-                        @if ($blog->featured_image)
+                        @if (!empty($blog->featured_image))
                             <img src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}"
-                                class="article-featured-img">
+                                class="article-featured-img" onerror="this.style.display='none';">
                         @endif
 
                         <div class="article-body">
@@ -457,15 +483,20 @@
                                 <h4 class="widget-title">Recent Posts</h4>
                                 <div class="sidebar-posts-list">
                                     @foreach ($recentBlogs as $recent)
-                                        <a href="{{ route('blogs.show', $recent->slug) }}" class="sidebar-post">
-                                            <img src="{{ $recent->featured_image ? asset($recent->featured_image) : asset('images/img_1.jpg') }}"
-                                                class="sidebar-post-img" alt="{{ $recent->title }}">
+                                        <a href="{{ route('blogs.show', $recent->slug) }}" class="sidebar-post {{ empty($recent->featured_image) ? 'no-image' : '' }}">
+                                            @if (!empty($recent->featured_image))
+                                                <img src="{{ asset($recent->featured_image) }}" alt="{{ $recent->title }}" class="sidebar-post-img" onerror="this.style.display='none'; this.closest('.sidebar-post').classList.add('no-image');">
+                                            @endif
                                             <div class="sidebar-post-content">
                                                 <div class="sidebar-post-title">{{ $recent->title }}</div>
+                                                <div class="sidebar-post-desc">
+                                                    {{ \Illuminate\Support\Str::limit(strip_tags($recent->content), 60) }}
+                                                </div>
                                                 <div class="sidebar-post-date">
                                                     <i class="ti ti-calendar-event"></i>
                                                     {{ $recent->published_at ? \Carbon\Carbon::parse($recent->published_at)->format('M d, Y') : ($recent->created_at ? $recent->created_at->format('M d, Y') : '') }}
                                                 </div>
+                                                <div class="sidebar-read-more">Read more <i class="ti ti-arrow-right"></i></div>
                                             </div>
                                         </a>
                                     @endforeach

@@ -165,20 +165,53 @@ class HomeController extends Controller
         ]);
     }
 
-    public function services()
-    {
-        return view('frontend.services');
-    }
+public function services()
+{
+    SEOMeta::setTitle('GymHai Services | Gym Promotion, Leads & Fitness Solutions in India');
+    SEOMeta::setDescription('Explore GymHai services including gym listing, lead generation, membership promotion, and digital growth solutions for fitness businesses across India.');
+    SEOMeta::setCanonical(url()->current());
+    SEOMeta::setKeywords('gym services India, gym promotion, fitness marketing, gym leads, gymhai services');
 
-    public function about()
-    {
-        return view('frontend.about');
-    }
+    OpenGraph::setTitle('GymHai Services | Grow Your Gym Business');
+    OpenGraph::setDescription('Boost your gym visibility and get more leads with GymHai services.');
+    OpenGraph::setUrl(url()->current());
+    OpenGraph::addProperty('type', 'website');
+    OpenGraph::setSiteName('GymHai');
 
-    public function contact()
-    {
-        return view('frontend.contact');
-    }
+    return view('frontend.services');
+}
+
+   public function about()
+{
+    SEOMeta::setTitle('About GymHai | India’s Fastest Growing Gym Discovery Platform');
+    SEOMeta::setDescription('Learn about GymHai, our mission to simplify gym discovery and help fitness businesses grow with technology-driven solutions.');
+    SEOMeta::setCanonical(url()->current());
+    SEOMeta::setKeywords('about gymhai, gymhai India, fitness platform India, gym discovery platform');
+
+    OpenGraph::setTitle('About GymHai | Building a Fitter India');
+    OpenGraph::setDescription('Discover how GymHai connects users with the best gyms across India.');
+    OpenGraph::setUrl(url()->current());
+    OpenGraph::addProperty('type', 'website');
+    OpenGraph::setSiteName('GymHai');
+
+    return view('frontend.about');
+}
+
+  public function contact()
+{
+    SEOMeta::setTitle('Contact GymHai | Get in Touch for Support & Partnerships');
+    SEOMeta::setDescription('Contact GymHai for support, gym partnerships, business queries, or feedback. We are here to help you grow and stay fit.');
+    SEOMeta::setCanonical(url()->current());
+    SEOMeta::setKeywords('contact gymhai, gym support India, gym partnership, fitness help');
+
+    OpenGraph::setTitle('Contact GymHai | We’re Here to Help');
+    OpenGraph::setDescription('Reach out to GymHai for any queries or support.');
+    OpenGraph::setUrl(url()->current());
+    OpenGraph::addProperty('type', 'website');
+    OpenGraph::setSiteName('GymHai');
+
+    return view('frontend.contact');
+}
 
     public function contactSubmit(Request $request)
     {
