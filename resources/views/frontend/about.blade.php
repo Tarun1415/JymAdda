@@ -159,12 +159,49 @@
     <!-- ===== MISSION ===== -->
     <div class="mission-strip">
         <div class="mission-inner">
-            <h2>Our Mission</h2>
-            <p>
-                At GymHai, we believe that finding the right gym should be simple, and growing a gym business should be
-                accessible to everyone. We're building a transparent, community-driven platform that puts real information
-                first — for a fitter, healthier India.
-            </p>
+            <!-- Founder Details (Left Side) -->
+            <div class="founder-col">
+                <div class="founder-photo-wrap">
+                    <img src="{{ asset('images/founder.jpeg') }}" onerror="this.src='https://ui-avatars.com/api/?name=Tarun+Singh&size=400&background=4f46e5&color=fff'" alt="Tarun Singh" class="founder-photo">
+                </div>
+                <div class="founder-info">
+                    <h3>Tarun Kumar</h3>
+                    <span class="founder-role">Founder & CEO, GymHai</span>
+                    <p class="founder-quote">
+                        "I started GymHai to make fitness accessible to everyone and empower gym owners with the right tools. Every feature we build is designed keeping your fitness journey in mind."
+                    </p>
+                   <div class="founder-socials">
+    <a href="https://www.linkedin.com/in/tarun-kumar-63954b190" target="_blank" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+    </a>
+
+<a href="https://www.facebook.com/profile.php?id=100009870395609" target="_blank" title="Facebook">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+<path d="M22.675 0h-21.35C.595 0 0 .595 0 1.326v21.348C0 23.405.595 24 1.326 24H12.82V14.706H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24h-1.918c-1.505 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.595 1.325-1.326V1.326C24 .595 23.405 0 22.675 0z"/>
+</svg>
+</a>
+
+ <a href="https://www.instagram.com/_tarun2515/?hl=en" target="_blank" title="Instagram">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+<path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5c3.176 0 5.75-2.574 5.75-5.75v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.216 4 20 5.784 20 7.75v8.5c0 1.966-1.784 3.75-3.75 3.75h-8.5C5.784 20 4 18.216 4 16.25v-8.5C4 5.784 5.784 4 7.75 4zm4.25 2.75a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm0 2a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm5.25-.88a1.12 1.12 0 100 2.24 1.12 1.12 0 000-2.24z"/>
+</svg>
+</a>
+</div>
+                </div>
+            </div>
+
+            <!-- Mission Details (Right Side) -->
+            <div class="mission-col">
+                <div class="mission-badge">🚀 Our Mission</div>
+                <h2 class="mission-title">Building a <span class="text-gradient">Fitter India</span></h2>
+                <p class="mission-desc">
+                    At GymHai, we believe that finding the right gym should be simple, and growing a gym business should be
+                    accessible to everyone. We're building a transparent, community-driven platform that puts real information
+                    first — for a fitter, healthier India.
+                </p>
+            </div>
         </div>
     </div>
 @endsection

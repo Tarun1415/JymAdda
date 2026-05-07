@@ -407,32 +407,176 @@ body {
 }
 
 /* =====================
-   MISSION STRIP
+   MISSION STRIP (PREMIUM)
 ===================== */
 .mission-strip {
-    background: linear-gradient(135deg, #fafbff 0%, #f0f4ff 100%);
-    border-top: 1px solid #e8edff;
-    padding: 90px 24px;
-    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+    padding: 40px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-strip::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 100%; max-width: 1200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79,70,229,0.2), transparent);
 }
 
 .mission-inner {
-    max-width: 660px;
+    max-width: 1140px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
 }
 
-.mission-inner h2 {
+/* Founder Side (Left) */
+.founder-col {
+    flex: 0 0 460px;
+    display: flex;
+    flex-direction: column;
+}
+
+.founder-photo-wrap {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 32px;
+}
+
+.founder-photo-wrap::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 12px;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--ac-primary), #818cf8);
+    border-radius: 28px;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.founder-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    position: relative;
+    z-index: 1;
+    border: 4px solid #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.founder-info h3 {
     font-size: 32px;
     font-weight: 900;
     color: var(--ac-secondary);
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    letter-spacing: -1px;
 }
 
-.mission-inner p {
+.founder-role {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ac-primary);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.founder-quote {
     font-size: 17px;
-    color: var(--ac-text);
-    line-height: 1.75;
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.founder-quote::before {
+    content: '"';
+    position: absolute;
+    top: -24px; left: -14px;
+    font-size: 90px;
+    color: rgba(79,70,229,0.08);
+    font-family: Georgia, serif;
+    z-index: -1;
+    line-height: 1;
+}
+
+.founder-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.founder-socials a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    color: var(--ac-secondary);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(.22,.68,0,1.2);
+    border: 1px solid #e2e8f0;
+}
+
+.founder-socials a:hover {
+    background: var(--ac-primary);
+    color: #fff;
+    transform: translateY(-4px);
+    border-color: var(--ac-primary);
+    box-shadow: 0 10px 25px rgba(79,70,229,0.25);
+}
+
+/* Mission Side (Right) */
+.mission-col {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.mission-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: rgba(14, 165, 233, 0.1);
+    color: #0ea5e9;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.mission-title {
+    font-size: 46px;
+    font-weight: 900;
+    color: var(--ac-secondary);
+    margin-bottom: 24px;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+}
+
+.mission-title .text-gradient {
+    background: linear-gradient(135deg, var(--ac-primary), #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mission-desc {
+    font-size: 19px;
+    color: #475569;
+    line-height: 1.8;
     margin: 0;
 }
 
@@ -565,6 +709,36 @@ textarea.form-control {
     .free-banner-inner { padding: 52px 40px; gap: 40px; }
     .free-perks { grid-template-columns: 1fr; }
     
+    .mission-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+    
+    .mission-col {
+        padding-left: 0;
+    }
+    
+    .founder-col {
+        flex: auto;
+        align-items: center;
+        max-width: 500px;
+    }
+    
+    .founder-quote {
+        padding-left: 0;
+    }
+    
+    .founder-quote::before {
+        left: -10px;
+        font-size: 60px;
+        top: -15px;
+    }
+    
+    .founder-socials {
+        justify-content: center;
+    }
+
     .contact-layout { flex-direction: column; }
     .contact-info, .contact-form-wrap { padding: 40px 30px; }
 }
@@ -576,4 +750,5 @@ textarea.form-control {
     .free-banner-inner { padding: 44px 28px; flex-direction: column; }
     .free-banner-text h2 { font-size: 28px; }
     .btn-free { width: 100%; justify-content: center; }
+    .mission-title { font-size: 36px; }
 }
