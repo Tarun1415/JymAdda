@@ -100,13 +100,24 @@
               </div>
               <div class="gym-card-body">
                 <div class="gym-card-title">{{ $gym->gym_name }}</div>
-                <div class="gym-card-location">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  {{ $gym->city ?? '-' }}{{ $gym->state ? ', ' . $gym->state : '' }}
+                <div class="gym-card-location" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; margin-bottom: 12px;">
+                  <i class="ti ti-map-pin text-primary me-1"></i> {{ $gym->address ? $gym->address . ', ' . $gym->city : ($gym->city ? $gym->city . ', ' . $gym->state : 'Location not provided') }}
                 </div>
 
-                <div class="gym-card-desc">
-                  {{ $desc }}
+                <!-- Social & Map Icons -->
+                <div class="d-flex gap-2 mb-3 align-items-center">
+                    @if(!empty($gym->instagram_link))
+                        <a href="{{ $gym->instagram_link }}" target="_blank" title="Instagram" class="text-decoration-none" style="color: #E1306C; background: #fdf2f8; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-brand-instagram" style="font-size: 18px;"></i></a>
+                    @endif
+                    @if(!empty($gym->facebook_link))
+                        <a href="{{ $gym->facebook_link }}" target="_blank" title="Facebook" class="text-decoration-none" style="color: #1877F2; background: #eff6ff; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-brand-facebook" style="font-size: 18px;"></i></a>
+                    @endif
+                    @if(!empty($gym->youtube_link))
+                        <a href="{{ $gym->youtube_link }}" target="_blank" title="YouTube" class="text-decoration-none" style="color: #FF0000; background: #fef2f2; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-brand-youtube" style="font-size: 18px;"></i></a>
+                    @endif
+                    @if(!empty($gym->google_map_link))
+                        <a href="{{ $gym->google_map_link }}" target="_blank" title="Google Maps" class="text-decoration-none" style="color: #34A853; background: #ecfdf5; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-map-2" style="font-size: 18px;"></i></a>
+                    @endif
                 </div>
 
                 <div class="gym-card-footer">

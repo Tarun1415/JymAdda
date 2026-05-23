@@ -43,15 +43,32 @@
                                             style="background: #fff; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
                                             <div class="gym-card-title fw-bold text-dark mb-1"
                                                 style="font-size: 18px; line-height: 1.3;">{{ $gym->gym_name }}</div>
-                                            <div class="gym-card-location text-muted mb-3" style="font-size: 14px;">
-                                                📍 {{ $gym->city ?? '-' }}{{ $gym->state ? ', ' . $gym->state : '' }}
+                                            
+                                            <!-- Detailed Location with Address -->
+                                            <div class="gym-card-location text-muted mb-3" style="font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                                                <i class="ti ti-map-pin text-primary me-1"></i> {{ $gym->address ? $gym->address . ', ' . $gym->city : ($gym->city ? $gym->city . ', ' . $gym->state : 'Location not provided') }}
+                                            </div>
+
+                                            <!-- Social & Map Icons -->
+                                            <div class="d-flex gap-2 mb-3 align-items-center">
+                                                @if(!empty($gym->instagram_link))
+                                                    <a href="{{ $gym->instagram_link }}" target="_blank" title="Instagram" class="text-decoration-none" style="color: #E1306C; background: #fdf2f8; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-brand-instagram" style="font-size: 18px;"></i></a>
+                                                @endif
+                                                @if(!empty($gym->facebook_link))
+                                                    <a href="{{ $gym->facebook_link }}" target="_blank" title="Facebook" class="text-decoration-none" style="color: #1877F2; background: #eff6ff; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-brand-facebook" style="font-size: 18px;"></i></a>
+                                                @endif
+                                                @if(!empty($gym->youtube_link))
+                                                    <a href="{{ $gym->youtube_link }}" target="_blank" title="YouTube" class="text-decoration-none" style="color: #FF0000; background: #fef2f2; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-brand-youtube" style="font-size: 18px;"></i></a>
+                                                @endif
+                                                @if(!empty($gym->google_map_link))
+                                                    <a href="{{ $gym->google_map_link }}" target="_blank" title="Google Maps" class="text-decoration-none" style="color: #34A853; background: #ecfdf5; padding: 6px 8px; border-radius: 50%; transition: all 0.3s;"><i class="ti ti-map-2" style="font-size: 18px;"></i></a>
+                                                @endif
                                             </div>
 
                                             <div class="gym-card-footer mt-auto pt-3 d-flex justify-content-between align-items-center"
                                                 style="border-top: 1px solid #f1f5f9;">
                                                 <span class="gym-reviews-count text-muted fw-medium"
-                                                    style="font-size: 13px;">{{ $gym->total_reviews ?? 0 }}
-                                                    Reviews</span>
+                                                    style="font-size: 13px;">{{ $gym->total_reviews ?? 0 }} Reviews</span>
                                                 <span class="btn btn-sm btn-light text-primary fw-bold px-3 py-2"
                                                     style="border-radius: 10px;">View Details</span>
                                             </div>

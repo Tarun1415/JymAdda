@@ -1,13 +1,18 @@
 @extends('partner.layouts.app')
 
-@push('css')
+@push('styles')
     <style>
         .form-section {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: #ffffff;
             border-radius: 16px;
             padding: 30px;
             margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-left: 5px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .form-section:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
         }
 
         .form-section-title {
@@ -23,9 +28,51 @@
         }
 
         .form-section-title i {
-            color: #4f46e5;
             font-size: 22px;
         }
+        
+        /* Colorful Sections CSS */
+        .section-basic {
+            border-left-color: #3b82f6; 
+            background: linear-gradient(to right, #eff6ff 0%, #ffffff 30%);
+        }
+        .section-basic .form-section-title { border-bottom-color: #bfdbfe; }
+        .section-basic .form-section-title i { color: #3b82f6; }
+
+        .section-location {
+            border-left-color: #10b981;
+            background: linear-gradient(to right, #ecfdf5 0%, #ffffff 30%);
+        }
+        .section-location .form-section-title { border-bottom-color: #a7f3d0; }
+        .section-location .form-section-title i { color: #10b981; }
+
+        .section-facilities {
+            border-left-color: #8b5cf6;
+            background: linear-gradient(to right, #f5f3ff 0%, #ffffff 30%);
+        }
+        .section-facilities .form-section-title { border-bottom-color: #ddd6fe; }
+        .section-facilities .form-section-title i { color: #8b5cf6; }
+
+        .section-timings {
+            border-left-color: #f59e0b;
+            background: linear-gradient(to right, #fffbeb 0%, #ffffff 30%);
+        }
+        .section-timings .form-section-title { border-bottom-color: #fde68a; }
+        .section-timings .form-section-title i { color: #f59e0b; }
+
+        .section-social {
+            border-left-color: #ec4899;
+            background: linear-gradient(to right, #fdf2f8 0%, #ffffff 30%);
+        }
+        .section-social .form-section-title { border-bottom-color: #fbcfe8; }
+        .section-social .form-section-title i { color: #ec4899; }
+
+        .section-seo {
+            border-left-color: #14b8a6;
+            background: linear-gradient(to right, #f0fdfa 0%, #ffffff 30%);
+        }
+        .section-seo .form-section-title { border-bottom-color: #99f6e4; }
+        .section-seo .form-section-title i { color: #14b8a6; }
 
         .form-label {
             font-weight: 600;
@@ -151,12 +198,12 @@
 
                 <div class="card-body p-0">
                     <form action="{{ route('Partnerjym.update', $gym->uuid) }}" method="POST" enctype="multipart/form-data"
-                        class="p-4 p-md-5 needs-loading">
+                        class="p-4 needs-loading">
                         @csrf
                         @method('POST')
 
                         {{-- ================= BASIC DETAILS ================= --}}
-                        <div class="form-section">
+                        <div class="form-section section-basic">
                             <div class="form-section-title">
                                 <i class="ti ti-info-circle"></i> Basic Details
                             </div>
@@ -223,7 +270,7 @@
                <br>
 
                         {{-- ================= LOCATION DETAILS ================= --}}
-                        <div class="form-section">
+                        <div class="form-section section-location">
                             <div class="form-section-title">
                                 <i class="ti ti-map-pin"></i> Location Details
                             </div>
@@ -263,7 +310,7 @@
                <br>
 
                         {{-- ================= FACILITIES ================= --}}
-                        <div class="form-section">
+                        <div class="form-section section-facilities">
                             <div class="form-section-title">
                                 <i class="ti ti-star"></i> Facilities Included
                             </div>
@@ -294,7 +341,7 @@
                <br>
 
                         {{-- ================= TIMINGS & MEDIA ================= --}}
-                        <div class="form-section">
+                        <div class="form-section section-timings">
                             <div class="form-section-title">
                                 <i class="ti ti-clock"></i> Timings & Media
                             </div>
@@ -333,7 +380,7 @@
                <br>
 
                         {{-- ================= SOCIAL MEDIA LINKS ================= --}}
-                        <div class="form-section">
+                        <div class="form-section section-social">
                             <div class="form-section-title">
                                 <i class="ti ti-brand-instagram"></i> Social Media Links <span style="font-size: 14px; color: #64748b; font-weight: normal; margin-left: 5px;">(Optional)</span>
                             </div>
@@ -355,7 +402,7 @@
                <br>
 
                         {{-- ================= SEO DETAILS ================= --}}
-                        <div class="form-section">
+                        <div class="form-section section-seo">
                             <div class="form-section-title">
                                 <i class="ti ti-search"></i> SEO Optimization <span style="font-size: 14px; color: #64748b; font-weight: normal; margin-left: 5px;">(Optional)</span>
                             </div>

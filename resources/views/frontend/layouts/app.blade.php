@@ -25,6 +25,9 @@
     <link rel="icon" type="image/x-icon" href="/images/logo2.png">
     <link rel="stylesheet" href="{{ asset('fonts/icomoon/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}" />
+    
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
     <link rel="stylesheet" href="{{ asset('css/tiny-slider.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}" />

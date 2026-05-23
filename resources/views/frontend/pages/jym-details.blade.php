@@ -325,6 +325,22 @@
                                 <i class="ti ti-external-link"></i> Open in Google Maps 
                             </a>
                         @endif
+
+                        <!-- Social Icons -->
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            @if(!empty($jymListDetails->instagram_link))
+                                <a href="{{ $jymListDetails->instagram_link }}" target="_blank" title="Instagram" class="text-decoration-none" style="color: #E1306C; background: #fdf2f8; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(225, 48, 108, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-brand-instagram" style="font-size: 24px;"></i></a>
+                            @endif
+                            @if(!empty($jymListDetails->facebook_link))
+                                <a href="{{ $jymListDetails->facebook_link }}" target="_blank" title="Facebook" class="text-decoration-none" style="color: #1877F2; background: #eff6ff; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(24, 119, 242, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-brand-facebook" style="font-size: 24px;"></i></a>
+                            @endif
+                            @if(!empty($jymListDetails->youtube_link))
+                                <a href="{{ $jymListDetails->youtube_link }}" target="_blank" title="YouTube" class="text-decoration-none" style="color: #FF0000; background: #fef2f2; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-brand-youtube" style="font-size: 24px;"></i></a>
+                            @endif
+                            @if(!empty($jymListDetails->google_map_link))
+                                <a href="{{ $jymListDetails->google_map_link }}" target="_blank" title="Google Maps" class="text-decoration-none" style="color: #34A853; background: #ecfdf5; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(52, 168, 83, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-map-2" style="font-size: 24px;"></i></a>
+                            @endif
+                        </div>
                     </div>
 
                     {{-- 7. RATING & REVIEWS --}}
@@ -542,6 +558,22 @@
                                     <i class="ti ti-external-link"></i> Open in Google Maps
                                 </a>
                             @endif
+
+                            <!-- Social Icons -->
+                            <div class="d-flex justify-content-center gap-3 mt-4">
+                                @if(!empty($jymListDetails->instagram_link))
+                                    <a href="{{ $jymListDetails->instagram_link }}" target="_blank" title="Instagram" class="text-decoration-none" style="color: #E1306C; background: #fdf2f8; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(225, 48, 108, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-brand-instagram" style="font-size: 24px;"></i></a>
+                                @endif
+                                @if(!empty($jymListDetails->facebook_link))
+                                    <a href="{{ $jymListDetails->facebook_link }}" target="_blank" title="Facebook" class="text-decoration-none" style="color: #1877F2; background: #eff6ff; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(24, 119, 242, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-brand-facebook" style="font-size: 24px;"></i></a>
+                                @endif
+                                @if(!empty($jymListDetails->youtube_link))
+                                    <a href="{{ $jymListDetails->youtube_link }}" target="_blank" title="YouTube" class="text-decoration-none" style="color: #FF0000; background: #fef2f2; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-brand-youtube" style="font-size: 24px;"></i></a>
+                                @endif
+                                @if(!empty($jymListDetails->google_map_link))
+                                    <a href="{{ $jymListDetails->google_map_link }}" target="_blank" title="Google Maps" class="text-decoration-none" style="color: #34A853; background: #ecfdf5; padding: 10px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(52, 168, 83, 0.1); display: flex; align-items: center; justify-content: center;"><i class="ti ti-map-2" style="font-size: 24px;"></i></a>
+                                @endif
+                            </div>
                         </div>
 
                     </div>
