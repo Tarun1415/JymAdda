@@ -126,6 +126,59 @@
             </div>
         </div>
 
+        <!-- Right Column: For Gym Trainers -->
+        <div class="service-column trainer" data-aos="fade-up" data-aos-delay="300">
+            <div class="sc-header">
+                <div class="sc-icon trainer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="40" height="40">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                    </svg>
+                </div>
+                <h2 class="sc-title">For Fitness Trainers</h2>
+                <p class="sc-desc">Showcase your expertise, attract independent clients, and offer personalized coaching locally. <span class="badge bg-warning text-dark mt-2 d-inline-block">Coming Soon</span></p>
+            </div>
+
+            <ul class="feature-list trainer">
+                <li class="feature-item">
+                    <div class="fi-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5zm6-10.125a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0zm1.294 6.336a6.721 6.721 0 0 1-3.17.789 6.721 6.721 0 0 1-3.168-.789 3.376 3.376 0 0 1 6.338 0z" />
+                        </svg>
+                    </div>
+                    <div class="fi-content">
+                        <h4>Professional Portfolios</h4>
+                        <p>Create a dedicated trainer profile highlighting your certifications, expertise, and real client transformation stories.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="fi-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                        </svg>
+                    </div>
+                    <div class="fi-content">
+                        <h4>Direct Client Leads</h4>
+                        <p>Get discovered by fitness enthusiasts actively searching for personal training and customized diet plans in your city.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="fi-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="fi-content">
+                        <h4>Independent Earnings</h4>
+                        <p>Manage your own sessions, negotiate your fees directly with clients, and grow your independent coaching business.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="sc-footer">
+                <button class="btn-service btn-trainer disabled" style="opacity: 0.7; cursor: not-allowed;">Join Waitlist</button>
+            </div>
+        </div>
+
     </div>
 </section>
 

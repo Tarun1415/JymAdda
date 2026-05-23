@@ -257,8 +257,8 @@
                     <ul class="footer-links">
                         <li><a href="/partner/register">List Your Gym</a></li>
                         <li><a href="/partner/login">Partner Login</a></li>
-                        {{-- <li><a href="#">Pricing & Plans</a></li>
-                        <li><a href="#">CRM Documentation</a></li> --}}
+                        {{-- <li><a href="#">Pricing & Plans</a></li> --}}
+                        <li><a href="{{ route('bank.locator.index') }}">IFSC Code Finder</a></li>
                     </ul>
                 </div>
             </div>

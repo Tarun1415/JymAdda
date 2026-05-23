@@ -128,8 +128,8 @@
       @endforelse
     </div>
 
-    <div class="pagination-wrapper mt-5">
-      {{ $gyms->links() }}
+    <div class="pagination-wrapper mt-5 d-flex justify-content-center">
+      {{ $gyms->appends(request()->query())->links('pagination::bootstrap-5') }}
     </div>
 
   </div>

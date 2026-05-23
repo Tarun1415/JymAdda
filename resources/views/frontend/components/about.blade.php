@@ -6,7 +6,7 @@
                         Why Choose GymHai?
                     </h2>
                     <p class="text-muted fs-5" style="line-height: 1.6;">
-                        GymHai is a complete fitness ecosystem designed to bridge the gap between fitness enthusiasts and modern gym owners through smart technology and transparent services.
+                        GymHai is the ultimate digital fitness ecosystem designed to revolutionize the health and wellness industry. By bridging the gap between fitness enthusiasts, gym owners, and professional trainers, we provide a unified platform driven by smart technology, transparent reviews, and centralized business management tools.
                     </p>
                 </div>
             </div>
@@ -28,9 +28,9 @@
                             </svg>
                         </span>
                         <div class="feature-text">
-                            <h3 class="heading h5 fw-bold mb-2">For Fitness Enthusiasts</h3>
+                            <h3 class="heading h5 fw-bold mb-2">Empowering Fitness Enthusiasts</h3>
                             <p class="text-muted small" style="line-height: 1.6;">
-                                Discover verified fitness centers, compare subscription plans, and read genuine reviews. Book your next workout with complete transparency and zero hidden fees.
+                                Experience seamless fitness discovery. Utilize advanced location-based searches to find top-rated local gyms, compare specialized facilities (like Crossfit, AC, and premium machinery), and make informed decisions by reading transparent, community-driven reviews and star ratings.
                             </p>
                         </div>
                     </div>
@@ -46,9 +46,9 @@
                             </svg>
                         </span>
                         <div class="feature-text">
-                            <h3 class="heading h5 fw-bold mb-2">Advanced Partner Dashboard</h3>
+                            <h3 class="heading h5 fw-bold mb-2">Comprehensive Solutions for Gym Owners</h3>
                             <p class="text-muted small" style="line-height: 1.6;">
-                                Gym owners can manage members, track active subscriptions, generate invoices, and automate their daily business operations effortlessly.
+                                Digitize your business with our robust partner dashboard. Effectively list your gym, manage dynamic galleries, capture targeted leads, monitor member renewals, track financial records, and automate daily operations to maximize business growth.
                             </p>
                         </div>
                     </div>
@@ -62,9 +62,9 @@
                             </svg>
                         </span>
                         <div class="feature-text">
-                            <h3 class="heading h5 fw-bold mb-2">Secure & Reliable</h3>
+                            <h3 class="heading h5 fw-bold mb-2">Dedicated Profiles for Trainers <span class="badge bg-warning text-dark ms-2" style="font-size:0.6rem;">Coming Soon</span></h3>
                             <p class="text-muted small" style="line-height: 1.6;">
-                                Built with industry-leading security standards. Your personal data, payment information, and business records are always safe and encrypted.
+                                We are expanding to support independent fitness professionals. Personal trainers will soon be able to showcase their certifications, highlight transformation stories, and generate direct leads from users actively seeking personalized fitness coaching.
                             </p>
                         </div>
                     </div>
@@ -106,9 +106,9 @@
                 <div
                     style="position: absolute; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; top: -150px; left: -100px;">
                 </div>
-                <h2 class="mb-4 text-white position-relative z-index-1 fw-bold">Become a Gym Partner Today!</h2>
+                <h2 class="mb-4 text-white position-relative z-index-1 fw-bold">Transform Your Fitness Business Today!</h2>
                 <p class="mb-4 text-white-50 position-relative z-index-1">
-                    Grow your business, manage your members securely, and let thousands of local users find you.
+                    Join the GymHai partner program to enhance your local visibility, leverage data-driven insights, and seamlessly scale your gym operations. Register now to unlock our full suite of premium digital management tools.
                 </p>
                 <div class="position-relative z-index-1">
                     <a href="/partner/register" class="btn btn-light text-primary py-3 px-5 rounded-pill fw-bold"

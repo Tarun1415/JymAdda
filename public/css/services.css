@@ -82,8 +82,8 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .service-column {
@@ -122,6 +122,11 @@ body {
 .sc-icon.partner {
     background: rgba(79, 70, 229, 0.1);
     color: var(--srv-primary);
+}
+
+.sc-icon.trainer {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
 }
 
 .sc-title {
@@ -180,6 +185,11 @@ body {
     color: #0ea5e9;
 }
 
+.trainer .fi-icon {
+    background: rgba(245, 158, 11, 0.05);
+    color: #f59e0b;
+}
+
 .fi-content h4 {
     font-size: 18px;
     font-weight: 700;
@@ -234,6 +244,20 @@ body {
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 15px 25px rgba(79, 70, 229, 0.4);
+}
+
+.btn-trainer {
+    background: #f59e0b;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+    border: none;
+}
+
+.btn-trainer:hover {
+    background: #d97706;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(245, 158, 11, 0.4);
 }
 
 /* --- Responsive --- */

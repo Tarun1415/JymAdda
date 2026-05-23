@@ -148,38 +148,44 @@
 <section class="policy-wrapper">
     <div class="container">
         <div class="policy-container" data-aos="fade-up" data-aos-delay="100">
-            <p>Thank you for choosing <strong>GymHai.online</strong>. This Refund Policy outlines the terms regarding payments made for premium features, advertising, gym listings, or any other digital services offered on our platform.</p>
+            <p>Thank you for choosing <strong>GymHai.online</strong>. We are committed to delivering premium digital solutions for the fitness community. This comprehensive Refund and Cancellation Policy outlines the strict terms regarding payments made for premium features, subscriptions, advertising, gym listings, or any other digital services offered on our platform.</p>
 
-            <h2>1. Nature of Payments</h2>
-            <p>All payments made on gymhai.online are for <strong>digital services and software access</strong>. This includes, but is not limited to, CRM software subscriptions for gym owners, premium listing placements, advertising packages, and premium member features.</p>
+            <h2>1. Nature of Digital Services</h2>
+            <p>All transactions processed on GymHai.online are for <strong>intangible, digital services and software access</strong>. This includes, but is not limited to, B2B CRM software subscriptions for gym owners, premium listing placements, lead generation packages, and advertising slots. Because our services provide immediate digital access and value, our refund policy is strictly structured.</p>
 
-            <h2>2. General Refund Rules</h2>
-            <p>Because our services are digital and provide immediate access or placement, we strictly adhere to the following rules regarding refunds:</p>
+            <h2>2. General Refund Rules & No-Refund Policy</h2>
+            <p>We adhere to a strict no-refund policy for all digital services once they have been delivered or activated. Please read the following carefully:</p>
             <ul>
-                <li><strong>No Refunds After Activation:</strong> Once a service, subscription, or ad campaign has been activated and is accessible or live on the platform, no refunds will be granted.</li>
-                <li><strong>Subscription Renewals:</strong> It is the user's responsibility to cancel any recurring subscriptions before the renewal date if they do not wish to be charged. We do not refund charges for subscriptions that were not canceled in time.</li>
+                <li><strong>No Refunds After Activation:</strong> Once a service, subscription, or ad campaign has been activated, customized, or made live on the platform, no refunds will be granted under any circumstances.</li>
+                <li><strong>Change of Mind:</strong> We do not offer refunds for "buyer's remorse" or if you simply decide you no longer need the software or listing after purchasing. We encourage all users to utilize our Free Trial (if available) before committing to a paid plan.</li>
+                <li><strong>Business Performance:</strong> We do not guarantee a specific number of footfalls, leads, or revenue increases. Refunds will not be issued based on the business performance or ROI of your gym listing.</li>
             </ul>
 
-            <h2>3. Exceptions for Technical Issues</h2>
-            <p>We strive to provide a seamless experience, but technical glitches can happen. A refund may be considered <strong>only</strong> in the following scenarios:</p>
+            <h2>3. Subscription Renewals and Cancellations</h2>
+            <p>If you are subscribed to a recurring premium plan (Monthly or Annually):</p>
             <ul>
-                <li>If there is a severe technical issue or platform downtime that prevents you from accessing a service you just paid for, and our support team is unable to resolve it within a reasonable timeframe.</li>
-                <li>If you were charged multiple times for a single transaction due to a payment gateway error.</li>
+                <li><strong>User Responsibility:</strong> It is your absolute responsibility to cancel any recurring subscriptions before the upcoming renewal billing date if you do not wish to be charged further.</li>
+                <li><strong>Cancellation Process:</strong> You can cancel your subscription at any time via your Partner Dashboard settings. Cancellation will prevent future charges, but it will not trigger a refund for the current active billing cycle.</li>
+                <li><strong>Access After Cancellation:</strong> After cancellation, you will retain access to your premium features until the end of your current paid billing period.</li>
             </ul>
 
-            <h2>4. How to Request a Refund</h2>
-            <p>If you believe you qualify for a refund under our technical issues exception, please follow these steps:</p>
+            <h2>4. Exceptions: Technical Issues & Billing Errors</h2>
+            <p>We strive to provide a flawless experience. A refund may be considered <strong>only</strong> in the following exceptional scenarios:</p>
             <ul>
-                <li>Contact our support team immediately at <strong>support@GymHai.com</strong>.</li>
-                <li>Provide your payment receipt and a detailed explanation of the technical issue.</li>
-                <li>Our team will review the request and get back to you within 3-5 business days.</li>
+                <li><strong>Major Technical Failure:</strong> If a severe, documented technical issue or prolonged platform downtime prevents you from accessing the core services you paid for, and our engineering team is unable to resolve it within 72 business hours.</li>
+                <li><strong>Duplicate Billing:</strong> If you provide proof that you were charged multiple times for a single transaction due to a payment gateway error on our end.</li>
             </ul>
 
-            <h2>5. Changes to This Policy</h2>
-            <p>We may update this Refund Policy periodically. We advise you to review this page before making any new purchases on our platform. Continued use signifies your acceptance of our terms.</p>
+            <h2>5. How to Request a Refund or Report an Issue</h2>
+            <p>If you believe you qualify for a refund under the technical issue or billing error exceptions, please follow these strict steps within 7 days of the transaction:</p>
+            <ul>
+                <li>Send an email directly to our billing department at <strong>billing@gymhai.online</strong>.</li>
+                <li>Include your Account ID, payment receipt, transaction ID, and a detailed explanation (with screenshots) of the technical issue or duplicate charge.</li>
+                <li>Chargebacks initiated through your bank without first contacting our support team will result in immediate permanent suspension of your account and gym listing.</li>
+            </ul>
 
             <div class="policy-footer">
-                For any queries, feel free to reach out to our support team.
+                For any queries regarding this policy, feel free to reach out to our support team. Last Updated: {{ date('F Y') }}
             </div>
         </div>
     </div>

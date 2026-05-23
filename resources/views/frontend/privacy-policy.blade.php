@@ -148,49 +148,52 @@
 <section class="policy-wrapper">
     <div class="container">
         <div class="policy-container" data-aos="fade-up" data-aos-delay="100">
-            <p>Welcome to <strong>GymHai.online</strong>. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+            <p>Welcome to <strong>GymHai.online</strong> ("we", "our", or "us"). We respect your privacy and are highly committed to protecting your personal data. This comprehensive Privacy Policy explains in detail how we collect, use, disclose, and safeguard your information when you visit our website, use our mobile applications, or engage with our fitness management CRM and directory services.</p>
 
             <h2>1. Information We Collect</h2>
-            <p>We collect information to provide better services to all our users. The types of personal data we collect include:</p>
+            <p>We collect various types of information to provide and continuously improve our services:</p>
             <ul>
-                <li><strong>Personal Details:</strong> Your name, email address, and phone number when you register, fill out forms, or contact us.</li>
-                <li><strong>Location Data:</strong> Your geographical location (if you grant permission) to provide you with the most relevant gym search results near you.</li>
-                <li><strong>Usage Data:</strong> Information on how you interact with our website, including pages visited, time spent, and search queries.</li>
-                <li><strong>Cookies & Analytics:</strong> We use cookies and similar tracking technologies (like Google Analytics) to track the activity on our platform and hold certain information.</li>
+                <li><strong>Personal Identification Data:</strong> Your full name, email address, phone number, and date of birth when you register for an account, subscribe to our newsletters, or contact support.</li>
+                <li><strong>Business Information (For Partners):</strong> Gym name, registration documents, tax IDs, banking details for payouts, and facility photos.</li>
+                <li><strong>Location Data:</strong> Precise or approximate geographical location (if you grant permission) to provide you with the most relevant, localized gym search results.</li>
+                <li><strong>Usage & Technical Data:</strong> Information on how you interact with our website, including IP addresses, browser types, operating systems, pages visited, time spent, and navigation paths.</li>
+                <li><strong>Cookies & Tracking Technologies:</strong> We use cookies, web beacons, and similar tracking technologies to track activity on our platform, store user preferences, and deliver targeted advertising.</li>
             </ul>
 
             <h2>2. How We Use Your Data</h2>
-            <p>The information we collect is used for the following purposes:</p>
+            <p>The information we collect is strictly used for the following operational and business purposes:</p>
             <ul>
-                <li>To provide, maintain, and improve our platform functionality.</li>
-                <li>To offer personalized gym suggestions and tailored content based on your location and preferences.</li>
-                <li>To communicate with you, including responding to inquiries and providing reliable customer support.</li>
-                <li>To monitor the usage of our platform and perform technical analysis to enhance user experience.</li>
+                <li>To provide, maintain, and upgrade our platform's functionality and user interface.</li>
+                <li>To offer personalized gym suggestions, localized fitness content, and tailored marketing campaigns.</li>
+                <li>To process transactions securely, manage subscriptions, and send billing notifications.</li>
+                <li>To communicate with you efficiently, including responding to inquiries, sending service updates, and providing reliable customer support.</li>
+                <li>To monitor usage patterns, detect fraudulent activities, and enhance overall platform security.</li>
             </ul>
 
-            <h2>3. Third-Party Tools & Services</h2>
-            <p>We may share your data with trusted third-party service providers to facilitate our services. These include:</p>
+            <h2>3. Data Sharing and Third-Party Tools</h2>
+            <p>We do not sell your personal data. However, we may share your information with trusted third-party service providers to facilitate our operations:</p>
             <ul>
-                <li><strong>Google Analytics:</strong> Used to understand our website traffic and user behavior securely.</li>
-                <li><strong>Advertising Partners:</strong> We may use platforms like Google Ads to show relevant advertisements to our users.</li>
+                <li><strong>Analytics Providers:</strong> Services like Google Analytics help us understand website traffic and user behavior securely.</li>
+                <li><strong>Payment Processors:</strong> We use secure payment gateways to process transactions. We do not store your credit card details on our servers.</li>
+                <li><strong>Advertising Partners:</strong> We may partner with networks like Google AdSense to show relevant advertisements. These partners may use cookies to serve ads based on your prior visits to our website or other websites.</li>
+                <li><strong>Legal Requirements:</strong> We may disclose your data if required by law or in response to valid requests by public authorities.</li>
             </ul>
-            <p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
 
-            <h2>4. Data Security</h2>
-            <p>The security of your data is paramount to us. We take reasonable steps and implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+            <h2>4. Data Retention and Security</h2>
+            <p>The security of your data is paramount. We implement industry-standard encryption protocols (SSL/TLS), secure server hosting, and regular security audits to protect your personal information from unauthorized access, alteration, disclosure, or destruction. We retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy, or as required by law.</p>
 
-            <h2>5. Your Data Rights</h2>
-            <p>You have full control over your personal information. You have the right to:</p>
+            <h2>5. Your Privacy Rights (GDPR & CCPA)</h2>
+            <p>Depending on your location, you have full control over your personal information. You have the right to:</p>
             <ul>
-                <li>Request access to the personal data we hold about you.</li>
-                <li>Request the correction of inaccurate or incomplete data at any time.</li>
-                <li>Request the deletion of your personal data from our systems.</li>
-                <li>Withdraw your consent where we relied on it to process your personal information.</li>
+                <li><strong>Access:</strong> Request copies of the personal data we hold about you.</li>
+                <li><strong>Rectification:</strong> Request the correction of inaccurate or incomplete data.</li>
+                <li><strong>Erasure (Right to be Forgotten):</strong> Request the permanent deletion of your personal data from our active systems.</li>
+                <li><strong>Opt-Out:</strong> Withdraw your consent for marketing communications or data processing at any time.</li>
             </ul>
-            <p>To exercise any of these rights, please contact us via our Support page.</p>
+            <p>To exercise any of these rights, please contact our Data Protection Officer at <strong>privacy@gymhai.online</strong>.</p>
 
             <div class="policy-footer">
-                By using gymhai.online, you agree to our Privacy Policy.
+                By using GymHai.online, you acknowledge that you have read and agree to our Privacy Policy. Last Updated: {{ date('F Y') }}
             </div>
         </div>
     </div>

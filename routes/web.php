@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminPartnerController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Frontend\EnquiryController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\BankLocatorController;
 use App\Http\Controllers\Frontend\JymListDetailsController;
 use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\BlogController;
@@ -39,9 +40,15 @@ Route::post('/gym-review', [ReviewController::class, 'store'])->name('Review.sto
 Route::post('/set-user-city', [HomeController::class, 'setUserCity'])->name('set.user.city');
 
 
-// Sitemap & SEO
-Route::any('/sitemap.xml', [SitemapController::class, 'index']);
+Route::get('/ifsc-code', [BankLocatorController::class, 'index'])->name('bank.locator.index');
+Route::get('/ifsc-code/{bankSlug}/{stateSlug?}/{districtSlug?}/{ifscSlug?}', [BankLocatorController::class, 'index'])->name('bank.locator.show');
 
+// Sitemap & SEO
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+Route::get('/sitemap-main.xml', [SitemapController::class, 'mainSitemap']);
+Route::get('/bank-sitemap-{page}.xml', [SitemapController::class, 'bankSitemap'])
+    ->where('page', '[0-9]+');
+    
 // ============================================
 // ADMIN ROUTES (User Management & Stats)
 // ============================================

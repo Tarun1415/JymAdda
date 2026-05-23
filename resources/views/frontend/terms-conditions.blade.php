@@ -148,41 +148,51 @@
 <section class="policy-wrapper">
     <div class="container">
         <div class="policy-container" data-aos="fade-up" data-aos-delay="100">
-            <p>Welcome to <strong>GymHai.online</strong>. These terms and conditions outline the rules and regulations for the use of our website and services. By accessing this website, we assume you accept these terms and conditions in full.</p>
+            <p>Welcome to <strong>GymHai.online</strong>. These detailed Terms and Conditions outline the rules, regulations, and legal obligations for the use of our website, applications, and fitness CRM services. By accessing or using this website, you accept these terms and conditions in full. If you disagree with any part of these terms, you must not use our platform.</p>
 
-            <h2>1. Purpose of the Website</h2>
-            <p><strong>gymhai.online</strong> is an advanced platform dedicated to helping users discover gyms, fitness centers, and health clubs. We also provide CRM and management tools for gym owners to manage their facilities efficiently. Our goal is to connect fitness enthusiasts with the best local gym options.</p>
+            <h2>1. Platform Purpose and Scope</h2>
+            <p><strong>GymHai.online</strong> operates as an advanced digital fitness ecosystem. We provide a directory for fitness enthusiasts to discover local gyms, read reviews, and connect with fitness centers. Simultaneously, we offer a B2B Software-as-a-Service (SaaS) CRM platform for gym owners to manage memberships, billing, and leads.</p>
 
-            <h2>2. User Responsibilities</h2>
-            <p>As a user of our platform, you agree to the following responsibilities:</p>
+            <h2>2. User Accounts and Responsibilities</h2>
+            <p>To access certain features, you may be required to create an account. You agree to:</p>
             <ul>
-                <li><strong>Accurate Information:</strong> You must not submit false, misleading, or inaccurate information when registering, reviewing, or submitting forms.</li>
-                <li><strong>Acceptable Use:</strong> You agree not to use the platform for spamming, harassment, distributing malware, or any other unauthorized or illegal misuse.</li>
-                <li><strong>Respect for Others:</strong> You will engage respectfully with other users and gym owners when leaving reviews or inquiries.</li>
+                <li><strong>Provide Accurate Information:</strong> You must submit true, current, and complete information during registration and keep your profile updated.</li>
+                <li><strong>Maintain Account Security:</strong> You are strictly responsible for safeguarding your password and account details. You must immediately notify us of any unauthorized use or security breach.</li>
+                <li><strong>Acceptable Use:</strong> You agree not to use the platform for scraping data, spamming, harassment, distributing malware, or attempting to breach our security infrastructure.</li>
             </ul>
 
-            <h2>3. Gym Listings & Accuracy</h2>
-            <p>While we strive to keep our directory updated, please note:</p>
+            <h2>3. Gym Listings, Content, and Accuracy</h2>
+            <p>We strive to maintain a high-quality directory, but we operate as an intermediary platform:</p>
             <ul>
-                <li>We do not guarantee the absolute accuracy, completeness, or timeliness of the gym details, pricing, or operating hours listed on the platform.</li>
-                <li>Gym owners and partners are solely responsible for the content, offers, and details they publish on their respective listing pages.</li>
+                <li><strong>No Guarantees:</strong> We do not guarantee the absolute accuracy, completeness, or timeliness of the gym details, pricing, or operating hours listed on the platform.</li>
+                <li><strong>Partner Responsibility:</strong> Gym owners and partners are solely responsible for the content, promotional offers, images, and specific details they publish on their respective listing pages.</li>
+                <li><strong>User-Generated Content:</strong> Any reviews, comments, or ratings posted by users must be based on genuine experiences. We reserve the right to remove offensive, fake, or defamatory content without notice.</li>
             </ul>
 
-            <h2>4. Account Security</h2>
-            <p>If you create an account on gymhai.online, you are responsible for maintaining the security of your login details. You are fully responsible for all activities that occur under your account. You must immediately notify us of any unauthorized uses of your account or any other breaches of security.</p>
+            <h2>4. Intellectual Property Rights</h2>
+            <p>Unless otherwise stated, GymHai and/or its licensors own the intellectual property rights for all material on the platform, including logos, software code, UI designs, and written content. You may view and/or print pages for your own personal use subject to restrictions set in these terms. You must not republish, sell, rent, or sub-license our proprietary material.</p>
 
-            <h2>5. Limitation of Liability</h2>
-            <p>Your health and safety are important, but we are a discovery platform. Therefore:</p>
+            <h2>5. Payments and Subscriptions</h2>
+            <p>For Gym Partners using our premium CRM services:</p>
             <ul>
-                <li>We are not responsible for any physical injury, financial loss, or damages that occur at any gym or fitness center found through our platform.</li>
-                <li>We hold no liability for any disputes that arise between users and gym owners.</li>
+                <li>All subscription fees are billed in advance on a recurring basis (monthly or annually) depending on your selected plan.</li>
+                <li>Failure to pay subscription fees may result in immediate suspension or termination of your premium features and listing visibility.</li>
+                <li>Please refer to our Refund Policy for detailed information regarding cancellations and refunds.</li>
             </ul>
 
-            <h2>6. Changes to Terms</h2>
-            <p>We reserve the right to update or modify these Terms and Conditions at any time without prior notice. Your continued use of the website following any changes indicates your acceptance of the new terms.</p>
+            <h2>6. Limitation of Liability and Indemnification</h2>
+            <p>Your health, safety, and business success are important, but you use our platform at your own risk. To the maximum extent permitted by applicable law:</p>
+            <ul>
+                <li>We are not responsible or liable for any physical injury, health issues, financial loss, or damages that occur at any physical gym or fitness center found through our platform.</li>
+                <li>We hold no liability for any business disputes, loss of revenue, or operational issues that arise between users and gym owners.</li>
+                <li>You agree to indemnify and hold harmless GymHai.online and its affiliates from any claims, damages, or expenses arising from your violation of these Terms.</li>
+            </ul>
+
+            <h2>7. Governing Law and Modifications</h2>
+            <p>These terms shall be governed by and construed in accordance with the laws of our operating jurisdiction. We reserve the right to update or modify these Terms and Conditions at any time without prior notice. Your continued use of the website following any changes indicates your acceptance of the new terms.</p>
 
             <div class="policy-footer">
-                By accessing gymhai.online, you accept these terms and conditions.
+                By accessing GymHai.online, you legally accept these terms and conditions. Last Updated: {{ date('F Y') }}
             </div>
         </div>
     </div>

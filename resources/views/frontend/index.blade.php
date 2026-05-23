@@ -14,6 +14,6 @@
 
 @include('frontend.components.our-customer')
 
-
+@include('frontend.components.faq')
 
 @endsection

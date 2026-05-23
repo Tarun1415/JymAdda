@@ -520,9 +520,9 @@
                     <div class="auth-logo-mobile">
                         <a href="/"><img src="../images/logo2.png" alt="GymHai"></a>
                     </div>
-                    <div class="trial-badge">
+                    {{-- <div class="trial-badge">
                         <i class="ti ti-star-filled"></i> Claim Your 1 Month Free Trial
-                    </div>
+                    </div> --}}
                 </div>
 
                 <h1 class="auth-title">List your gym.<br><span>Get more members.</span></h1>
@@ -565,7 +565,7 @@
             <div class="auth-form-wrap">
                 <div class="auth-form-head">
                     <h2>Create Account</h2>
-                    <p>Start your <strong>1 Month Free Trial</strong> today.</p>
+                    {{-- <p>Start your <strong>1 Month Free Trial</strong> today.</p> --}}
                 </div>
 
                 @if (session('success'))

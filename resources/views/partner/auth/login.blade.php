@@ -493,9 +493,9 @@
                     <div class="auth-logo-mobile">
                         <a href="/"><img src="../images/logo2.png" alt="GymHai"></a>
                     </div>
-                    <div class="trial-badge">
+                    {{-- <div class="trial-badge">
                         <i class="ti ti-star-filled"></i> 1 Month Free Trial
-                    </div>
+                    </div> --}}
                 </div>
 
                 <h1 class="auth-title">Manage your gym.<br><span>Grow your business.</span></h1>
@@ -590,7 +590,7 @@
 
                     <!-- Register Link -->
                     <div class="auth-footer">
-                        Don't have an account? <a href="/partner/register">Start 1 Month Free Trial</a>
+                        Don't have an account? <a href="/partner/register">Register Now</a>
                     </div>
                 </form>
             </div>
