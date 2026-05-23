@@ -42,7 +42,10 @@ class Gym extends Model
         'seo_title',
         'seo_description',
         'seo_keywords',
-        'seo_image'
+        'seo_image',
+        'instagram_link',
+        'youtube_link',
+        'facebook_link'
     ];
 
     protected static function boot()

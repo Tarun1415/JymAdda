@@ -276,6 +276,28 @@
             </div>
                <br>
 
+            {{-- ================= SOCIAL MEDIA LINKS ================= --}}
+            <div class="form-section">
+              <div class="form-section-title">
+                  <i class="ti ti-brand-instagram"></i> Social Media Links <span style="font-size: 14px; color: #64748b; font-weight: normal; margin-left: 5px;">(Optional)</span>
+              </div>
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <label class="form-label">Instagram Link</label>
+                  <input type="url" name="instagram_link" class="form-control" placeholder="https://instagram.com/yourgym" value="{{ old('instagram_link') }}">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Facebook Link</label>
+                  <input type="url" name="facebook_link" class="form-control" placeholder="https://facebook.com/yourgym" value="{{ old('facebook_link') }}">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">YouTube Link</label>
+                  <input type="url" name="youtube_link" class="form-control" placeholder="https://youtube.com/@yourgym" value="{{ old('youtube_link') }}">
+                </div>
+              </div>
+            </div>
+               <br>
+
             {{-- ================= SEO DETAILS ================= --}}
             <div class="form-section">
               <div class="form-section-title">

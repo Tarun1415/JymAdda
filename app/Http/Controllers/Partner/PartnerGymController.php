@@ -94,6 +94,9 @@ public function StoreJymData(Request $request)
         'pincode'          => 'nullable|string|max:20',
         'gym_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp',
         'seo_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp',
+        'instagram_link'   => 'nullable|url|max:255',
+        'facebook_link'    => 'nullable|url|max:255',
+        'youtube_link'     => 'nullable|url|max:255',
     ], [
         'slug.unique' => "This Gym URL is already taken. Suggestions: $suggest1, $suggest2"
     ]);
@@ -194,6 +197,10 @@ public function StoreJymData(Request $request)
         'seo_description' => $request->seo_description,
         'seo_image'       => $seoImagePath,
 
+        'instagram_link'  => $request->instagram_link,
+        'facebook_link'   => $request->facebook_link,
+        'youtube_link'    => $request->youtube_link,
+
         // ✅ Default status
         'status' => 'pending',
     ]);
@@ -264,6 +271,9 @@ public function updateJymData(Request $request, $uuid)
         'seo_title'        => 'nullable|string|max:255',
         'seo_description'  => 'nullable|string|max:1000',
         'seo_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp',
+        'instagram_link'   => 'nullable|url|max:255',
+        'facebook_link'    => 'nullable|url|max:255',
+        'youtube_link'     => 'nullable|url|max:255',
     ], [
         'slug.unique' => 'This Gym URL is already taken. Please modify the Gym URL manually to make it unique.'
     ]);
@@ -343,6 +353,10 @@ public function updateJymData(Request $request, $uuid)
         'seo_title'       => $request->seo_title,
         'seo_description' => $request->seo_description,
         'seo_image'       => $seoImagePath,
+
+        'instagram_link'  => $request->instagram_link,
+        'facebook_link'   => $request->facebook_link,
+        'youtube_link'    => $request->youtube_link,
 
         // ✅ agar update ke baad admin approval chahiye
         'status' => 'pending',
