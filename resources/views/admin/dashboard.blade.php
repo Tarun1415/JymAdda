@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-12">
           <div class="page-header-title">
-            <h2 class="mb-0">Super Admin Dashboard</h2>
+            <h2 class="mb-0">Welcome, {{ auth()->user()->name ?? 'Admin' }}!</h2>
           </div>
         </div>
       </div>

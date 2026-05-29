@@ -10,9 +10,11 @@
         <li class="pc-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
           <a href="{{ route('admin.dashboard') }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
-            <span class="pc-mtext">Admin Dashboard</span>
+            <span class="pc-mtext">{{ auth()->user()->role === 'staff' ? 'Dashboard' : 'Admin Dashboard' }}</span>
           </a>
         </li>
+
+        @if(auth()->user()->role !== 'staff')
 
         <li class="pc-item pc-caption">
           <label>Platform Management</label>
@@ -29,6 +31,8 @@
             <span class="pc-mtext">Registered Partners</span>
           </a>
         </li>
+        @endif
+
         <li class="pc-item {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
           <a href="{{ route('admin.blogs.index') }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-book"></i></span>
@@ -36,6 +40,7 @@
           </a>
         </li>
 
+        @if(auth()->user()->role === 'admin')
         <li class="pc-item pc-caption">
           <label>Super Admin Controls</label>
           <i class="ti ti-lock"></i>
@@ -46,6 +51,7 @@
             <span class="pc-mtext">User Management</span>
           </a>
         </li>
+        @endif
       </ul>
     </div>
   </div>
